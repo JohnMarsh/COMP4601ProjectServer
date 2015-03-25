@@ -1,33 +1,29 @@
 package com.com4601project.factory;
 
 import java.io.StringReader;
-import java.util.HashMap;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import com.com4601project.model.Bill;
-
 import org.eclipse.persistence.jaxb.MarshallerProperties;
+
+import com.com4601project.model.Bill;
 
 public class FactoryTest {
 
 	public static void main(String[] args) throws JAXBException {
 		JAXBContext jaxbContext = JAXBContext.newInstance(Bill.class);
+		System.out.println(jaxbContext.getClass());
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
 		StringReader reader = new StringReader(TEST_XML);
 		Bill bill = (Bill) unmarshaller.unmarshal(reader);
-		System.out.println(bill);
 
-
-		JAXBContext jc = JAXBContext.newInstance(new Class[] { Bill.class }
-				);
-		
-		Marshaller marshaller = jc.createMarshaller();
-		marshaller.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
+		Marshaller marshaller = jaxbContext.createMarshaller();
+		marshaller.setProperty(MarshallerProperties.MEDIA_TYPE,
+				"application/json");
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		marshaller.marshal(bill, System.out);
 

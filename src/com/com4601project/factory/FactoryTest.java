@@ -14,7 +14,7 @@ import com.com4601project.model.Bill;
 public class FactoryTest {
 
 	public static void main(String[] args) throws JAXBException {
-		JAXBContext jaxbContext = JAXBContext.newInstance(Bill.class);
+		JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory.createContext(new Class[]{Bill.class}, null);
 		System.out.println(jaxbContext.getClass());
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 

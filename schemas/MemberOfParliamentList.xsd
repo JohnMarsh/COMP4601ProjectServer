@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 16:06:47 
+		GMT-0400 (EDT) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="MemberOfParliamentList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MemberOfParliament" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PersonShortHonorific" type="xs:string"></xs:element>
+							<xs:element name="PersonOfficialFirstName" type="xs:string"></xs:element>
+							<xs:element name="PersonOfficialLastName" type="xs:string"></xs:element>
+							<xs:element name="ConstituencyName" type="xs:string"></xs:element>
+							<xs:element name="ConstituencyProvinceTerritoryName"
+								type="xs:string"></xs:element>
+							<xs:element name="CaucusShortName" type="xs:string"></xs:element>
+							<xs:element name="FromDateTime" type="xs:dateTime"></xs:element>
+							<xs:element name="ToDateTime">
+								<xs:complexType>
+									<xs:attribute name="xsi:nil" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="xmlns:xsd" type="xs:string"></xs:attribute>
+			<xs:attribute name="xmlns:xsi" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

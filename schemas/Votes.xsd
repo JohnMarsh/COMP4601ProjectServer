@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 15:08:25 
+		GMT-0400 (EDT) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="Votes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vote" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Description" type="xs:string"></xs:element>
+							<xs:element name="Decision" type="xs:string"></xs:element>
+							<xs:element name="RelatedBill">
+								<xs:complexType>
+									<xs:attribute name="number" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="TotalYeas" type="xs:int"></xs:element>
+							<xs:element name="TotalNays" type="xs:int"></xs:element>
+							<xs:element name="TotalPaired" type="xs:int"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="number" type="xs:int"></xs:attribute>
+						<xs:attribute name="parliament" type="xs:int"></xs:attribute>
+						<xs:attribute name="session" type="xs:int"></xs:attribute>
+						<xs:attribute name="sitting" type="xs:int"></xs:attribute>
+						<xs:attribute name="date" type="xs:date"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="schemaVersion" type="xs:int"></xs:attribute>
+			<xs:attribute name="parliament" type="xs:int"></xs:attribute>
+			<xs:attribute name="session" type="xs:int"></xs:attribute>
+			<xs:attribute name="sitting" type="xs:string"></xs:attribute>
+			<xs:attribute name="votesRespecting" type="xs:string"></xs:attribute>
+			<xs:attribute name="fromDate" type="xs:date"></xs:attribute>
+			<xs:attribute name="toDate" type="xs:date"></xs:attribute>
+			<xs:attribute name="yea" type="xs:string"></xs:attribute>
+			<xs:attribute name="nay" type="xs:string"></xs:attribute>
+			<xs:attribute name="paired" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

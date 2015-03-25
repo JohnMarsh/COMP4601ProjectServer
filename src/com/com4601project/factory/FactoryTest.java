@@ -2,7 +2,6 @@ package com.com4601project.factory;
 
 import java.io.StringReader;
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,7 +10,6 @@ import javax.xml.bind.Unmarshaller;
 
 import com.com4601project.model.Bill;
 
-import org.eclipse.persistence.jaxb.JAXBContextProperties;
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 
 public class FactoryTest {

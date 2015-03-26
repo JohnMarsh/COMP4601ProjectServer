@@ -70,15 +70,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "", propOrder = {
     "memberOfParliament"
 })
-@XmlRootElement(name = "memberOfParliamentList")
+@XmlRootElement(name = "list")
 public class MemberOfParliamentList {
 
     @XmlElement(required = true)
     protected List<MemberOfParliamentList.MemberOfParliament> memberOfParliament;
-    @XmlAttribute(name = "xmlns:xsd")
-    protected String xmlnsXsd;
-    @XmlAttribute(name = "xmlns:xsi")
-    protected String xmlnsXsi;
+
 
     /**
      * Gets the value of the memberOfParliament property.
@@ -107,54 +104,6 @@ public class MemberOfParliamentList {
             memberOfParliament = new ArrayList<MemberOfParliamentList.MemberOfParliament>();
         }
         return this.memberOfParliament;
-    }
-
-    /**
-     * Gets the value of the xmlnsXsd property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getXmlnsXsd() {
-        return xmlnsXsd;
-    }
-
-    /**
-     * Sets the value of the xmlnsXsd property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setXmlnsXsd(String value) {
-        this.xmlnsXsd = value;
-    }
-
-    /**
-     * Gets the value of the xmlnsXsi property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getXmlnsXsi() {
-        return xmlnsXsi;
-    }
-
-    /**
-     * Sets the value of the xmlnsXsi property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setXmlnsXsi(String value) {
-        this.xmlnsXsi = value;
     }
 
 
@@ -200,8 +149,7 @@ public class MemberOfParliamentList {
         "constituencyName",
         "constituencyProvinceTerritoryName",
         "caucusShortName",
-        "fromDateTime",
-        "toDateTime"
+        "fromDateTime"
     })
     public static class MemberOfParliament {
 
@@ -220,8 +168,6 @@ public class MemberOfParliamentList {
         @XmlElement(required = true)
         @XmlSchemaType(name = "dateTime")
         protected XMLGregorianCalendar fromDateTime;
-        @XmlElement(required = true)
-        protected MemberOfParliamentList.MemberOfParliament.ToDateTime toDateTime;
 
         /**
          * Gets the value of the personShortHonorific property.
@@ -391,29 +337,7 @@ public class MemberOfParliamentList {
             this.fromDateTime = value;
         }
 
-        /**
-         * Gets the value of the toDateTime property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link MemberOfParliamentList.MemberOfParliament.ToDateTime }
-         *     
-         */
-        public MemberOfParliamentList.MemberOfParliament.ToDateTime getToDateTime() {
-            return toDateTime;
-        }
 
-        /**
-         * Sets the value of the toDateTime property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MemberOfParliamentList.MemberOfParliament.ToDateTime }
-         *     
-         */
-        public void setToDateTime(MemberOfParliamentList.MemberOfParliament.ToDateTime value) {
-            this.toDateTime = value;
-        }
 
 
         /**

@@ -1,31 +1,77 @@
 package com.comp4601project.factory;
 
+import java.io.File;
 import java.io.StringReader;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import javax.xml.stream.util.StreamReaderDelegate;
 
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 
 import com.comp4601project.model.Bill;
+import com.comp4601project.model.MemberExpenditureReports;
+import com.comp4601project.model.MemberOfParliamentList;
+import com.comp4601project.model.MemberVotes;
+import com.comp4601project.model.Votes;
 
 public class FactoryTest {
 
-	public static void main(String[] args) throws JAXBException {
-		JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory.createContext(new Class[]{Bill.class}, null);
+	public static void main(String[] args) throws JAXBException,
+			XMLStreamException {
+
+		System.out.println(new File(".").getAbsolutePath());
+
+		JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory
+				.createContext(new Class[] { Bill.class}, null);
 		System.out.println(jaxbContext.getClass());
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
 		StringReader reader = new StringReader(TEST_XML);
-		Bill bill = (Bill) unmarshaller.unmarshal(reader);
+
+		XMLInputFactory xif = XMLInputFactory.newInstance();
+		XMLStreamReader xsr = xif.createXMLStreamReader(reader);
+		xsr = new MyStreamReaderDelegate(xsr);
+
+		Bill bill = (Bill) unmarshaller.unmarshal(xsr);
 
 		Marshaller marshaller = jaxbContext.createMarshaller();
 		marshaller.setProperty(MarshallerProperties.MEDIA_TYPE,
 				"application/json");
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		marshaller.marshal(bill, System.out);
+
+	}
+
+	private static class MyStreamReaderDelegate extends StreamReaderDelegate {
+
+		public MyStreamReaderDelegate(XMLStreamReader xsr) {
+			super(xsr);
+		}
+
+		@Override
+		public String getAttributeLocalName(int index) {
+			// String name = super.getAttributeLocalName(index);
+			// String newName = Character.toLowerCase(name.charAt(0))
+			// + name.substring(1);
+			// System.out.println(newName);
+			// return newName;
+			return super.getAttributeLocalName(index);
+		}
+
+		@Override
+		public String getLocalName() {
+			String name = super.getLocalName();
+			String newName = Character.toLowerCase(name.charAt(0))
+					+ name.substring(1);
+			System.out.println(newName);
+			return newName;
+		}
 
 	}
 

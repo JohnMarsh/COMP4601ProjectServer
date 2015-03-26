@@ -4,21 +4,21 @@
 	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 16:06:47 
 		GMT-0400 (EDT) -->
 	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
-	<xs:element name="MemberOfParliamentList">
+	<xs:element name="memberOfParliamentList">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="MemberOfParliament" maxOccurs="unbounded">
+				<xs:element name="memberOfParliament" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="PersonShortHonorific" type="xs:string"></xs:element>
-							<xs:element name="PersonOfficialFirstName" type="xs:string"></xs:element>
-							<xs:element name="PersonOfficialLastName" type="xs:string"></xs:element>
-							<xs:element name="ConstituencyName" type="xs:string"></xs:element>
-							<xs:element name="ConstituencyProvinceTerritoryName"
+							<xs:element name="personShortHonorific" type="xs:string"></xs:element>
+							<xs:element name="personOfficialFirstName" type="xs:string"></xs:element>
+							<xs:element name="personOfficialLastName" type="xs:string"></xs:element>
+							<xs:element name="constituencyName" type="xs:string"></xs:element>
+							<xs:element name="constituencyProvinceTerritoryName"
 								type="xs:string"></xs:element>
-							<xs:element name="CaucusShortName" type="xs:string"></xs:element>
-							<xs:element name="FromDateTime" type="xs:dateTime"></xs:element>
-							<xs:element name="ToDateTime">
+							<xs:element name="caucusShortName" type="xs:string"></xs:element>
+							<xs:element name="fromDateTime" type="xs:dateTime"></xs:element>
+							<xs:element name="toDateTime">
 								<xs:complexType>
 									<xs:attribute name="xsi:nil" type="xs:string"></xs:attribute>
 								</xs:complexType>

@@ -4,22 +4,22 @@
 	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 15:08:25 
 		GMT-0400 (EDT) -->
 	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
-	<xs:element name="Votes">
+	<xs:element name="votes">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Vote" maxOccurs="unbounded">
+				<xs:element name="vote" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Description" type="xs:string"></xs:element>
-							<xs:element name="Decision" type="xs:string"></xs:element>
-							<xs:element name="RelatedBill">
+							<xs:element name="description" type="xs:string"></xs:element>
+							<xs:element name="decision" type="xs:string"></xs:element>
+							<xs:element name="relatedBill">
 								<xs:complexType>
 									<xs:attribute name="number" type="xs:string"></xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="TotalYeas" type="xs:int"></xs:element>
-							<xs:element name="TotalNays" type="xs:int"></xs:element>
-							<xs:element name="TotalPaired" type="xs:int"></xs:element>
+							<xs:element name="totalYeas" type="xs:int"></xs:element>
+							<xs:element name="totalNays" type="xs:int"></xs:element>
+							<xs:element name="totalPaired" type="xs:int"></xs:element>
 						</xs:sequence>
 						<xs:attribute name="number" type="xs:int"></xs:attribute>
 						<xs:attribute name="parliament" type="xs:int"></xs:attribute>

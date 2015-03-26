@@ -4,26 +4,26 @@
 	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 11:55:36 
 		GMT-0400 (EDT) -->
 	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
-	<xs:element name="Bill">
+	<xs:element name="bill">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="BillIntroducedDate" type="xs:dateTime"></xs:element>
-				<xs:element name="ParliamentSession">
+				<xs:element name="billIntroducedDate" type="xs:dateTime"></xs:element>
+				<xs:element name="parliamentSession">
 					<xs:complexType>
 						<xs:attribute name="parliamentNumber" type="xs:int"></xs:attribute>
 						<xs:attribute name="sessionNumber" type="xs:int"></xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="BillNumber">
+				<xs:element name="billNumber">
 					<xs:complexType>
 						<xs:attribute name="prefix" type="xs:string"></xs:attribute>
 						<xs:attribute name="number" type="xs:int"></xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="BillTitle">
+				<xs:element name="billTitle">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Title" maxOccurs="unbounded" type="xs:string">
+							<xs:element name="title" maxOccurs="unbounded" type="xs:string">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -35,10 +35,10 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="ShortTitle">
+				<xs:element name="shortTitle">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Title" maxOccurs="unbounded" type="xs:string">
+							<xs:element name="title" maxOccurs="unbounded" type="xs:string">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -50,10 +50,10 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="BillType">
+				<xs:element name="billType">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Title" maxOccurs="unbounded" type="xs:string">
+							<xs:element name="title" maxOccurs="unbounded" type="xs:string">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -65,10 +65,10 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="SponsorAffiliation">
+				<xs:element name="sponsorAffiliation">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Title" maxOccurs="unbounded" type="xs:string">
+							<xs:element name="title" maxOccurs="unbounded" type="xs:string">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -77,22 +77,22 @@
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="Person">
+							<xs:element name="person">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="FullName" type="xs:string"></xs:element>
-										<xs:element name="FirstName" type="xs:string"></xs:element>
-										<xs:element name="MiddleName"></xs:element>
-										<xs:element name="LastName" type="xs:string"></xs:element>
+										<xs:element name="fullName" type="xs:string"></xs:element>
+										<xs:element name="firstName" type="xs:string"></xs:element>
+										<xs:element name="fiddleName"></xs:element>
+										<xs:element name="lastName" type="xs:string"></xs:element>
 									</xs:sequence>
 									<xs:attribute name="id" type="xs:int"></xs:attribute>
-									<xs:attribute name="Gender" type="xs:string"></xs:attribute>
+									<xs:attribute name="gender" type="xs:string"></xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="PoliticalParty">
+							<xs:element name="politicalParty">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Title" maxOccurs="unbounded"
+										<xs:element name="title" maxOccurs="unbounded"
 											type="xs:string">
 											<xs:complexType>
 												<xs:simpleContent>
@@ -105,7 +105,7 @@
 										<xs:element name="abbreviation">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="Title" maxOccurs="unbounded"
+													<xs:element name="title" maxOccurs="unbounded"
 														type="xs:string">
 														<xs:complexType>
 															<xs:simpleContent>
@@ -125,20 +125,20 @@
 						<xs:attribute name="id" type="xs:int"></xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="ComingIntoForce">
+				<xs:element name="comingIntoForce">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Information">
+							<xs:element name="information">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Title" maxOccurs="unbounded"
+										<xs:element name="title" maxOccurs="unbounded"
 											type="xs:string">
 											<xs:complexType>
-													<xs:simpleContent>
-														<xs:extension base="xs:string">
-															<xs:attribute name="language" type="xs:string"></xs:attribute>
-														</xs:extension>
-													</xs:simpleContent>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="language" type="xs:string"></xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
@@ -147,10 +147,10 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="LegisInfoNotes">
+				<xs:element name="legisInfoNotes">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Title" maxOccurs="unbounded" type="xs:string">
+							<xs:element name="title" maxOccurs="unbounded" type="xs:string">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -162,10 +162,10 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="PrimeMinister">
+				<xs:element name="primeMinister">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Title" maxOccurs="unbounded" type="xs:string">
+							<xs:element name="title" maxOccurs="unbounded" type="xs:string">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -174,22 +174,22 @@
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="Person">
+							<xs:element name="person">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="FullName" type="xs:string"></xs:element>
-										<xs:element name="FirstName" type="xs:string"></xs:element>
-										<xs:element name="MiddleName"></xs:element>
-										<xs:element name="LastName" type="xs:string"></xs:element>
+										<xs:element name="fullName" type="xs:string"></xs:element>
+										<xs:element name="firstName" type="xs:string"></xs:element>
+										<xs:element name="middleName"></xs:element>
+										<xs:element name="lastName" type="xs:string"></xs:element>
 									</xs:sequence>
 									<xs:attribute name="id" type="xs:int"></xs:attribute>
-									<xs:attribute name="Gender" type="xs:string"></xs:attribute>
+									<xs:attribute name="gender" type="xs:string"></xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="PoliticalParty">
+							<xs:element name="politicalParty">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Title" maxOccurs="unbounded"
+										<xs:element name="title" maxOccurs="unbounded"
 											type="xs:string">
 											<xs:complexType>
 												<xs:simpleContent>
@@ -202,7 +202,7 @@
 										<xs:element name="abbreviation">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="Title" maxOccurs="unbounded"
+													<xs:element name="title" maxOccurs="unbounded"
 														type="xs:string">
 														<xs:complexType>
 															<xs:simpleContent>
@@ -222,21 +222,21 @@
 						<xs:attribute name="id" type="xs:int"></xs:attribute>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="Statute">
+				<xs:element name="statute">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Year" type="xs:int"></xs:element>
-							<xs:element name="Chapter" type="xs:int"></xs:element>
+							<xs:element name="year" type="xs:int"></xs:element>
+							<xs:element name="chapter" type="xs:int"></xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="Publications">
+				<xs:element name="publications">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Publication" maxOccurs="unbounded">
+							<xs:element name="publication" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Title" maxOccurs="unbounded"
+										<xs:element name="title" maxOccurs="unbounded"
 											type="xs:string">
 											<xs:complexType>
 												<xs:simpleContent>
@@ -246,10 +246,10 @@
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="PublicationFiles">
+										<xs:element name="publicationFiles">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="PublicationFile" maxOccurs="unbounded">
+													<xs:element name="publicationFile" maxOccurs="unbounded">
 														<xs:complexType>
 															<xs:simpleContent>
 																<xs:extension base="xs:string">
@@ -269,32 +269,32 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="Events">
+				<xs:element name="events">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="LastMajorStageEvent">
+							<xs:element name="lastMajorStageEvent">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Event">
+										<xs:element name="event">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="Status">
+													<xs:element name="status">
 														<xs:complexType>
 															<xs:sequence>
-																<xs:element name="Title" maxOccurs="unbounded"
+																<xs:element name="title" maxOccurs="unbounded"
 																	type="xs:string">
 																	<xs:complexType>
-																			<xs:simpleContent>
-																				<xs:extension base="xs:string">
-																					<xs:attribute name="language" type="xs:string"></xs:attribute>
-																				</xs:extension>
-																			</xs:simpleContent>
-																		</xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="language" type="xs:string"></xs:attribute>
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="Description"></xs:element>
+													<xs:element name="description"></xs:element>
 												</xs:sequence>
 												<xs:attribute name="id" type="xs:int"></xs:attribute>
 												<xs:attribute name="chamber" type="xs:string"></xs:attribute>
@@ -302,33 +302,33 @@
 												<xs:attribute name="meetingNumber" type="xs:int"></xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="Progress" type="xs:string"></xs:element>
+										<xs:element name="progress" type="xs:string"></xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="LegislativeEvents">
+							<xs:element name="legislativeEvents">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Event" maxOccurs="unbounded">
+										<xs:element name="event" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="Status">
+													<xs:element name="status">
 														<xs:complexType>
 															<xs:sequence>
-																<xs:element name="Title" maxOccurs="unbounded"
+																<xs:element name="title" maxOccurs="unbounded"
 																	type="xs:string">
 																	<xs:complexType>
-																			<xs:simpleContent>
-																				<xs:extension base="xs:string">
-																					<xs:attribute name="language" type="xs:string"></xs:attribute>
-																				</xs:extension>
-																			</xs:simpleContent>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="language" type="xs:string"></xs:attribute>
+																			</xs:extension>
+																		</xs:simpleContent>
 																	</xs:complexType>
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="Description"></xs:element>
+													<xs:element name="description" type="xs:string"></xs:element>
 												</xs:sequence>
 												<xs:attribute name="id" type="xs:int"></xs:attribute>
 												<xs:attribute name="chamber" type="xs:string"></xs:attribute>

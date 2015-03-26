@@ -4,39 +4,39 @@
 	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 16:07:46 
 		GMT-0400 (EDT) -->
 	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
-	<xs:element name="MemberVotes">
+	<xs:element name="memberVotes">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="VoteParticipant" maxOccurs="unbounded">
+				<xs:element name="voteParticipant" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="ParliamentNumber" type="xs:int"></xs:element>
-							<xs:element name="SessionNumber" type="xs:int"></xs:element>
-							<xs:element name="DecisionEventDateTime" type="xs:dateTime"></xs:element>
-							<xs:element name="DecisionResultName" type="xs:string"></xs:element>
-							<xs:element name="DecisionIsAgreedTo" type="xs:string"></xs:element>
-							<xs:element name="DecisionIsNegatived" type="xs:string"></xs:element>
-							<xs:element name="DecisionIsTied" type="xs:string"></xs:element>
-							<xs:element name="DecisionDivisionNumber" type="xs:int"></xs:element>
-							<xs:element name="DecisionDivisionSubject" type="xs:string"></xs:element>
-							<xs:element name="DecisionDivisionNumberOfYeas" type="xs:int"></xs:element>
-							<xs:element name="DecisionDivisionNumberOfNays" type="xs:int"></xs:element>
-							<xs:element name="DecisionDivisionNumberOfPaired"
+							<xs:element name="parliamentNumber" type="xs:int"></xs:element>
+							<xs:element name="sessionNumber" type="xs:int"></xs:element>
+							<xs:element name="decisionEventDateTime" type="xs:dateTime"></xs:element>
+							<xs:element name="decisionResultName" type="xs:string"></xs:element>
+							<xs:element name="decisionIsAgreedTo" type="xs:string"></xs:element>
+							<xs:element name="decisionIsNegatived" type="xs:string"></xs:element>
+							<xs:element name="decisionIsTied" type="xs:string"></xs:element>
+							<xs:element name="decisionDivisionNumber" type="xs:int"></xs:element>
+							<xs:element name="decisionDivisionSubject" type="xs:string"></xs:element>
+							<xs:element name="decisionDivisionNumberOfYeas" type="xs:int"></xs:element>
+							<xs:element name="decisionDivisionNumberOfNays" type="xs:int"></xs:element>
+							<xs:element name="decisionDivisionNumberOfPaired"
 								type="xs:int"></xs:element>
-							<xs:element name="DocumentTypeName" type="xs:string"></xs:element>
-							<xs:element name="BillNumberCode"></xs:element>
-							<xs:element name="BillLongTitle"></xs:element>
-							<xs:element name="BillShortTitle"></xs:element>
-							<xs:element name="PersonOfficialFirstName" type="xs:string"></xs:element>
-							<xs:element name="PersonOfficialLastName" type="xs:string"></xs:element>
-							<xs:element name="PersonShortHonorific"></xs:element>
-							<xs:element name="ConstituencyName" type="xs:string"></xs:element>
-							<xs:element name="ConstituencyProvinceTerritoryName"
+							<xs:element name="documentTypeName" type="xs:string"></xs:element>
+							<xs:element name="billNumberCode"></xs:element>
+							<xs:element name="billLongTitle"></xs:element>
+							<xs:element name="billShortTitle"></xs:element>
+							<xs:element name="personOfficialFirstName" type="xs:string"></xs:element>
+							<xs:element name="personOfficialLastName" type="xs:string"></xs:element>
+							<xs:element name="personShortHonorific"></xs:element>
+							<xs:element name="constituencyName" type="xs:string"></xs:element>
+							<xs:element name="constituencyProvinceTerritoryName"
 								type="xs:string"></xs:element>
-							<xs:element name="VoteValueName" type="xs:string"></xs:element>
-							<xs:element name="IsVoteYea" type="xs:string"></xs:element>
-							<xs:element name="IsVoteNay" type="xs:string"></xs:element>
-							<xs:element name="IsVotePaired" type="xs:string"></xs:element>
+							<xs:element name="voteValueName" type="xs:string"></xs:element>
+							<xs:element name="isVoteYea" type="xs:string"></xs:element>
+							<xs:element name="isVoteNay" type="xs:string"></xs:element>
+							<xs:element name="isVotePaired" type="xs:string"></xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

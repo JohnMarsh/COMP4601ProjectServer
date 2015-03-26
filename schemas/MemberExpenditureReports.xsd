@@ -4,19 +4,19 @@
 	<!-- XML Schema Generated from XML Document on Wed Mar 25 2015 15:13:58 
 		GMT-0400 (EDT) -->
 	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
-	<xs:element name="MemberExpenditureReports">
+	<xs:element name="memberExpenditureReports">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Report">
+				<xs:element name="report">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="StartDate" type="xs:date"></xs:element>
-							<xs:element name="EndDate">
+							<xs:element name="startDate" type="xs:date"></xs:element>
+							<xs:element name="endDate">
 								<xs:complexType>
 									<xs:attribute name="xsi:nil" type="xs:string"></xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="Constituency">
+							<xs:element name="constituency">
 								<xs:complexType>
 									<xs:attribute name="id" type="xs:int"></xs:attribute>
 									<xs:attribute name="name-en" type="xs:string"></xs:attribute>
@@ -27,7 +27,7 @@
 									<xs:attribute name="province" type="xs:string"></xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="Member">
+							<xs:element name="member">
 								<xs:complexType>
 									<xs:attribute name="lastName" type="xs:string"></xs:attribute>
 									<xs:attribute name="firstName" type="xs:string"></xs:attribute>
@@ -36,31 +36,31 @@
 									<xs:attribute name="party-fr" type="xs:string"></xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="ExpenditureCategories">
+							<xs:element name="expenditureCategories">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="Category" maxOccurs="unbounded">
+										<xs:element name="category" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="MembersBudget">
+													<xs:element name="membersBudget">
 														<xs:complexType>
 															<xs:attribute name="value" type="xs:double"></xs:attribute>
 															<xs:attribute name="currency" type="xs:string"></xs:attribute>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="ResourcesProvidedByTheHouse">
+													<xs:element name="resourcesProvidedByTheHouse">
 														<xs:complexType>
 															<xs:attribute name="xsi:nil" type="xs:string"></xs:attribute>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="TravelPoints"></xs:element>
-													<xs:element name="Total">
+													<xs:element name="travelPoints"></xs:element>
+													<xs:element name="total">
 														<xs:complexType>
 															<xs:attribute name="value" type="xs:double"></xs:attribute>
 															<xs:attribute name="currency" type="xs:string"></xs:attribute>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="SubCategories"></xs:element>
+													<xs:element name="subCategories"></xs:element>
 												</xs:sequence>
 												<xs:attribute name="id" type="xs:string"></xs:attribute>
 												<xs:attribute name="name-en" type="xs:string"></xs:attribute>
@@ -70,25 +70,25 @@
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="ExpenditureTotals">
+							<xs:element name="expenditureTotals">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="MembersBudget">
+										<xs:element name="membersBudget">
 											<xs:complexType>
 												<xs:attribute name="value" type="xs:double"></xs:attribute>
 												<xs:attribute name="currency" type="xs:string"></xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="ResourcesProvidedByTheHouse">
+										<xs:element name="resourcesProvidedByTheHouse">
 											<xs:complexType>
 												<xs:attribute name="value" type="xs:double"></xs:attribute>
 												<xs:attribute name="currency" type="xs:string"></xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="TravelPoints">
+										<xs:element name="travelPoints">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="Points" maxOccurs="unbounded">
+													<xs:element name="points" maxOccurs="unbounded">
 														<xs:complexType>
 															<xs:attribute name="type" type="xs:string"></xs:attribute>
 															<xs:attribute name="value" type="xs:double"></xs:attribute>
@@ -97,7 +97,7 @@
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="Total">
+										<xs:element name="total">
 											<xs:complexType>
 												<xs:attribute name="value" type="xs:double"></xs:attribute>
 												<xs:attribute name="currency" type="xs:string"></xs:attribute>
@@ -106,7 +106,7 @@
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="Footnote"></xs:element>
+							<xs:element name="footnote"></xs:element>
 						</xs:sequence>
 						<xs:attribute name="type" type="xs:string"></xs:attribute>
 					</xs:complexType>

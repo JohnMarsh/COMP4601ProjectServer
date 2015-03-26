@@ -1,4 +1,4 @@
-package com.com4601project.factory;
+package com.comp4601project.factory;
 
 import java.io.StringReader;
 
@@ -9,7 +9,7 @@ import javax.xml.bind.Unmarshaller;
 
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 
-import com.com4601project.model.Bill;
+import com.comp4601project.model.Bill;
 
 public class FactoryTest {
 

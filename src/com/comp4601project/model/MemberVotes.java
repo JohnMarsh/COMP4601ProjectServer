@@ -6,7 +6,7 @@
 //
 
 
-package com.com4601project.model;
+package com.comp4601project.model;
 
 import java.util.ArrayList;
 import java.util.List;

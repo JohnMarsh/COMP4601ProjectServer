@@ -1,13 +1,31 @@
 package com.comp4601project.persistence;
 
+import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.stream.XMLStreamException;
+
+import com.comp4601project.fetcher.DataFetcher;
+import com.comp4601project.model.Bill;
+import com.comp4601project.model.Bills;
 import com.comp4601project.model.MemberExpenditureReports;
 import com.comp4601project.model.MemberOfParliamentList;
+import com.comp4601project.model.MemberOfParliamentList.MemberOfParliament;
+import com.comp4601project.model.ModelObjectFactory;
 import com.comp4601project.model.Votes;
 import com.comp4601project.model.Votes.Vote;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.Mongo;
+import com.mongodb.MongoException;
+import com.mongodb.util.JSON;
 
 public class DataAccess implements IDataAccess {
 
@@ -16,75 +34,156 @@ public class DataAccess implements IDataAccess {
 	private static final String BILL_COLLECTION = "bill";
 	private static final String VOTE_COLLECTION = "vote";
 	private static final String EXP_COLLECTION = "exp";
-	
+
 	private MongoClient mongoClient;
+	private DB db;
 
 	private static DataAccess instance = null;
 
-	public synchronized DataAccess getInstance() {
+	public static synchronized DataAccess getInstance() {
 		if (instance == null) {
 			instance = new DataAccess();
 		}
 		return instance;
 	}
-	
+
 	public DataAccess() {
 		try {
 			mongoClient = new MongoClient("localhost");
+			db = mongoClient.getDB(DB_NAME);
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 
 	@Override
 	public void saveMPList(MemberOfParliamentList mpList) {
-		// TODO Auto-generated method stub
-
+		for (MemberOfParliament mp : mpList.getMemberOfParliament()) {
+			saveMP(mp);
+		}
 	}
 
 	@Override
-	public void saveMP(MemberOfParliamentList mpList) {
-		// TODO Auto-generated method stub
+	public void saveMP(MemberOfParliament mp) {
+		try {
+			DBObject existingMp = getMP(mp.getPersonOfficialFirstName(),
+					mp.getPersonOfficialLastName());
 
+			DBObject updatedMp = (DBObject) JSON.parse(ModelObjectFactory
+					.toJSON(mp));
+
+			if (existingMp == null) {
+
+				db.getCollection(MP_COLLECTION).insert(updatedMp);
+			} else {
+				db.getCollection(MP_COLLECTION).update(existingMp, updatedMp);
+			}
+
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public String getMPListJSON() {
-		// TODO Auto-generated method stub
-		return null;
+		List<DBObject> mpList = getMPList();
+		return JSON.serialize(mpList);
 	}
 
 	@Override
-	public String getMPJSON() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getMPJSON(String fname, String lname) {
+		DBObject mp = getMP(fname, lname);
+		return JSON.serialize(mp);
 	}
 
 	@Override
 	public void saveVoteList(Votes votes) {
-		// TODO Auto-generated method stub
-
+		for (Vote vote : votes.getVote()) {
+			saveVote(vote);
+		}
 	}
 
 	@Override
 	public void saveVote(Vote vote) {
-		// TODO Auto-generated method stub
+		try {
+			DBObject existingVote = getVote(vote.getNumber(),
+					vote.getParliament(), vote.getSession());
 
+			System.out.println(ModelObjectFactory.toJSON(vote));
+
+			DBObject updateVote = (DBObject) JSON.parse(ModelObjectFactory
+					.toJSON(vote));
+
+			if (existingVote == null) {
+
+				db.getCollection(VOTE_COLLECTION).insert(updateVote);
+			} else {
+				db.getCollection(VOTE_COLLECTION).update(existingVote,
+						updateVote);
+			}
+
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public DBObject getVote(Integer number, Integer parliament, Integer session) {
+		BasicDBObject query = new BasicDBObject("number", number);
+		query.put("parliament", parliament);
+		query.put("session", session);
+
+		DBCursor cursor = db.getCollection(VOTE_COLLECTION).find(query);
+
+		if (cursor.size() == 0) {
+			return null;
+		} else {
+			return cursor.next();
+		}
 	}
 
 	@Override
-	public String getVoteListJSON() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getVoteListJSON(String parliament, String session) {
+		List<DBObject> votes = new ArrayList<DBObject>();
+		BasicDBObject query = new BasicDBObject();
+		query.put("parliament", Integer.parseInt(parliament));
+		query.put("session", Integer.parseInt(session));
+
+		DBCursor cursor = db.getCollection(VOTE_COLLECTION).find(query);
+
+		if (cursor.size() == 0) {
+			try {
+				DataFetcher.fetchVoteLists(parliament, session);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JAXBException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (XMLStreamException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			db.getCollection(VOTE_COLLECTION).find(query);
+			if (cursor.size() == 0) {
+				return "No votes found";
+			}
+		}
+
+		while (cursor.hasNext()) {
+			votes.add(cursor.next());
+		}
+		return JSON.serialize(votes);
 	}
 
 	@Override
-	public String getVoteJSON() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getVoteJSON(String number, String parliament, String session) {
+		DBObject vote = getVote(Integer.parseInt(number),
+				Integer.parseInt(parliament), Integer.parseInt(session));
+		return JSON.serialize(vote);
 	}
 
 	@Override
@@ -94,9 +193,82 @@ public class DataAccess implements IDataAccess {
 	}
 
 	@Override
-	public String getExpReportJSONForMP() {
+	public String getExpReportJSONForMP(String fname, String lname) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public DBObject getMP(String fname, String lname) {
+		BasicDBObject query = new BasicDBObject("personOfficialFirstName",
+				fname);
+		query.put("personOfficialLastName", lname);
+
+		DBCursor cursor = db.getCollection(MP_COLLECTION).find(query);
+
+		if (cursor.size() == 0) {
+			return null;
+		} else {
+			return cursor.next();
+		}
+	}
+
+	@Override
+	public void saveBill(Bill bill) {
+		try {
+			DBObject existingBill = getBillWithId(bill.getId());
+
+			DBObject updatedBill = (DBObject) JSON.parse(ModelObjectFactory
+					.toJSON(bill));
+
+			if (existingBill == null) {
+
+				db.getCollection(BILL_COLLECTION).insert(updatedBill);
+			} else {
+				db.getCollection(BILL_COLLECTION).update(existingBill,
+						updatedBill);
+			}
+
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public DBObject getBillWithId(Integer id) {
+		BasicDBObject query = new BasicDBObject("_id", id);
+
+		DBCursor cursor = db.getCollection(BILL_COLLECTION).find(query);
+
+		if (cursor.size() == 0) {
+			return null;
+		} else {
+			return cursor.next();
+		}
+	}
+
+	@Override
+	public void saveBillList(Bills bills) {
+		for (Bill bill : bills.getBill()) {
+			saveBill(bill);
+		}
+
+		DBCursor cursorDoc = db.getCollection(BILL_COLLECTION).find();
+		while (cursorDoc.hasNext()) {
+			System.out.println(cursorDoc.next());
+		}
+
+		System.out.println(cursorDoc.size());
+	}
+
+	@Override
+	public List<DBObject> getMPList() {
+		List<DBObject> mps = new ArrayList<DBObject>();
+		DBCursor cursorDoc = db.getCollection(MP_COLLECTION).find();
+		while (cursorDoc.hasNext()) {
+			mps.add(cursorDoc.next());
+		}
+		return mps;
+	}
 }

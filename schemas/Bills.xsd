@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Thu Mar 26 2015 21:32:26 GMT-0400 (EDT) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="Bills">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="Bill" maxOccurs="unbounded">
+                               
+                           </xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

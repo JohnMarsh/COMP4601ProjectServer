@@ -5,7 +5,6 @@
 // Generated on: 2015.03.26 at 03:17:15 PM EDT 
 //
 
-
 package com.comp4601project.model;
 
 import java.util.ArrayList;
@@ -19,11 +18,13 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -208,2139 +209,1839 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "report"
-})
+@XmlType(name = "", propOrder = { "report","id","startDate","endDate" })
 @XmlRootElement(name = "memberExpenditureReports")
 public class MemberExpenditureReports {
 
-    @XmlElement(required = true)
-    protected MemberExpenditureReports.Report report;
-    @XmlAttribute(name = "xmlns:xsd")
-    protected String xmlnsXsd;
-    @XmlAttribute(name = "xmlns:xsi")
-    protected String xmlnsXsi;
-    @XmlAttribute(name = "id")
-    protected String id;
-    @XmlAttribute(name = "startDate")
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDate;
-    @XmlAttribute(name = "endDate")
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endDate;
-
-    /**
-     * Gets the value of the report property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemberExpenditureReports.Report }
-     *     
-     */
-    public MemberExpenditureReports.Report getReport() {
-        return report;
-    }
-
-    /**
-     * Sets the value of the report property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemberExpenditureReports.Report }
-     *     
-     */
-    public void setReport(MemberExpenditureReports.Report value) {
-        this.report = value;
-    }
-
-    /**
-     * Gets the value of the xmlnsXsd property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getXmlnsXsd() {
-        return xmlnsXsd;
-    }
-
-    /**
-     * Sets the value of the xmlnsXsd property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setXmlnsXsd(String value) {
-        this.xmlnsXsd = value;
-    }
-
-    /**
-     * Gets the value of the xmlnsXsi property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getXmlnsXsi() {
-        return xmlnsXsi;
-    }
-
-    /**
-     * Sets the value of the xmlnsXsi property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setXmlnsXsi(String value) {
-        this.xmlnsXsi = value;
-    }
-
-    /**
-     * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setId(String value) {
-        this.id = value;
-    }
-
-    /**
-     * Gets the value of the startDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getStartDate() {
-        return startDate;
-    }
-
-    /**
-     * Sets the value of the startDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setStartDate(XMLGregorianCalendar value) {
-        this.startDate = value;
-    }
-
-    /**
-     * Gets the value of the endDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getEndDate() {
-        return endDate;
-    }
-
-    /**
-     * Sets the value of the endDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEndDate(XMLGregorianCalendar value) {
-        this.endDate = value;
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
-     *         &lt;element name="endDate">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="constituency">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}int" />
-     *                 &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="numberOfElectors" type="{http://www.w3.org/2001/XMLSchema}int" />
-     *                 &lt;attribute name="size" type="{http://www.w3.org/2001/XMLSchema}int" />
-     *                 &lt;attribute name="sizeUnit" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="province" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="member">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;attribute name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="status" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="party-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="party-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="expenditureCategories">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="category" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="membersBudget">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                                     &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="resourcesProvidedByTheHouse">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="travelPoints" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                             &lt;element name="total">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                                     &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="subCategories" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                           &lt;/sequence>
-     *                           &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                           &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                           &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="expenditureTotals">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="membersBudget">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="resourcesProvidedByTheHouse">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="travelPoints">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="points" maxOccurs="unbounded">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                                     &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="total">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="footnote" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *       &lt;/sequence>
-     *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "startDate",
-        "endDate",
-        "constituency",
-        "member",
-        "expenditureCategories",
-        "expenditureTotals",
-        "footnote"
-    })
-    public static class Report {
-
-        @XmlElement(required = true)
-        @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar startDate;
-        @XmlElement(required = true)
-        protected MemberExpenditureReports.Report.EndDate endDate;
-        @XmlElement(required = true)
-        protected MemberExpenditureReports.Report.Constituency constituency;
-        @XmlElement(required = true)
-        protected MemberExpenditureReports.Report.Member member;
-        @XmlElement(required = true)
-        protected MemberExpenditureReports.Report.ExpenditureCategories expenditureCategories;
-        @XmlElement(required = true)
-        protected MemberExpenditureReports.Report.ExpenditureTotals expenditureTotals;
-        @XmlElement(required = true)
-        protected Object footnote;
-        @XmlAttribute(name = "type")
-        protected String type;
-
-        /**
-         * Gets the value of the startDate property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getStartDate() {
-            return startDate;
-        }
-
-        /**
-         * Sets the value of the startDate property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setStartDate(XMLGregorianCalendar value) {
-            this.startDate = value;
-        }
-
-        /**
-         * Gets the value of the endDate property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link MemberExpenditureReports.Report.EndDate }
-         *     
-         */
-        public MemberExpenditureReports.Report.EndDate getEndDate() {
-            return endDate;
-        }
-
-        /**
-         * Sets the value of the endDate property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MemberExpenditureReports.Report.EndDate }
-         *     
-         */
-        public void setEndDate(MemberExpenditureReports.Report.EndDate value) {
-            this.endDate = value;
-        }
-
-        /**
-         * Gets the value of the constituency property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link MemberExpenditureReports.Report.Constituency }
-         *     
-         */
-        public MemberExpenditureReports.Report.Constituency getConstituency() {
-            return constituency;
-        }
-
-        /**
-         * Sets the value of the constituency property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MemberExpenditureReports.Report.Constituency }
-         *     
-         */
-        public void setConstituency(MemberExpenditureReports.Report.Constituency value) {
-            this.constituency = value;
-        }
-
-        /**
-         * Gets the value of the member property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link MemberExpenditureReports.Report.Member }
-         *     
-         */
-        public MemberExpenditureReports.Report.Member getMember() {
-            return member;
-        }
-
-        /**
-         * Sets the value of the member property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MemberExpenditureReports.Report.Member }
-         *     
-         */
-        public void setMember(MemberExpenditureReports.Report.Member value) {
-            this.member = value;
-        }
-
-        /**
-         * Gets the value of the expenditureCategories property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link MemberExpenditureReports.Report.ExpenditureCategories }
-         *     
-         */
-        public MemberExpenditureReports.Report.ExpenditureCategories getExpenditureCategories() {
-            return expenditureCategories;
-        }
-
-        /**
-         * Sets the value of the expenditureCategories property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MemberExpenditureReports.Report.ExpenditureCategories }
-         *     
-         */
-        public void setExpenditureCategories(MemberExpenditureReports.Report.ExpenditureCategories value) {
-            this.expenditureCategories = value;
-        }
-
-        /**
-         * Gets the value of the expenditureTotals property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link MemberExpenditureReports.Report.ExpenditureTotals }
-         *     
-         */
-        public MemberExpenditureReports.Report.ExpenditureTotals getExpenditureTotals() {
-            return expenditureTotals;
-        }
-
-        /**
-         * Sets the value of the expenditureTotals property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MemberExpenditureReports.Report.ExpenditureTotals }
-         *     
-         */
-        public void setExpenditureTotals(MemberExpenditureReports.Report.ExpenditureTotals value) {
-            this.expenditureTotals = value;
-        }
-
-        /**
-         * Gets the value of the footnote property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Object }
-         *     
-         */
-        public Object getFootnote() {
-            return footnote;
-        }
-
-        /**
-         * Sets the value of the footnote property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Object }
-         *     
-         */
-        public void setFootnote(Object value) {
-            this.footnote = value;
-        }
-
-        /**
-         * Gets the value of the type property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getType() {
-            return type;
-        }
-
-        /**
-         * Sets the value of the type property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setType(String value) {
-            this.type = value;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}int" />
-         *       &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="numberOfElectors" type="{http://www.w3.org/2001/XMLSchema}int" />
-         *       &lt;attribute name="size" type="{http://www.w3.org/2001/XMLSchema}int" />
-         *       &lt;attribute name="sizeUnit" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="province" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "")
-        public static class Constituency {
-
-            @XmlAttribute(name = "id")
-            protected Integer id;
-            @XmlAttribute(name = "name-en")
-            protected String nameEn;
-            @XmlAttribute(name = "name-fr")
-            protected String nameFr;
-            @XmlAttribute(name = "numberOfElectors")
-            protected Integer numberOfElectors;
-            @XmlAttribute(name = "size")
-            protected Integer size;
-            @XmlAttribute(name = "sizeUnit")
-            protected String sizeUnit;
-            @XmlAttribute(name = "province")
-            protected String province;
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *     
-             */
-            public Integer getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *     
-             */
-            public void setId(Integer value) {
-                this.id = value;
-            }
-
-            /**
-             * Gets the value of the nameEn property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getNameEn() {
-                return nameEn;
-            }
-
-            /**
-             * Sets the value of the nameEn property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setNameEn(String value) {
-                this.nameEn = value;
-            }
-
-            /**
-             * Gets the value of the nameFr property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getNameFr() {
-                return nameFr;
-            }
-
-            /**
-             * Sets the value of the nameFr property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setNameFr(String value) {
-                this.nameFr = value;
-            }
-
-            /**
-             * Gets the value of the numberOfElectors property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *     
-             */
-            public Integer getNumberOfElectors() {
-                return numberOfElectors;
-            }
-
-            /**
-             * Sets the value of the numberOfElectors property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *     
-             */
-            public void setNumberOfElectors(Integer value) {
-                this.numberOfElectors = value;
-            }
-
-            /**
-             * Gets the value of the size property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *     
-             */
-            public Integer getSize() {
-                return size;
-            }
-
-            /**
-             * Sets the value of the size property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *     
-             */
-            public void setSize(Integer value) {
-                this.size = value;
-            }
-
-            /**
-             * Gets the value of the sizeUnit property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getSizeUnit() {
-                return sizeUnit;
-            }
-
-            /**
-             * Sets the value of the sizeUnit property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setSizeUnit(String value) {
-                this.sizeUnit = value;
-            }
-
-            /**
-             * Gets the value of the province property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getProvince() {
-                return province;
-            }
-
-            /**
-             * Sets the value of the province property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setProvince(String value) {
-                this.province = value;
-            }
-
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "")
-        public static class EndDate {
-
-            @XmlAttribute(name = "xsi:nil")
-            protected String xsiNil;
-
-            /**
-             * Gets the value of the xsiNil property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getXsiNil() {
-                return xsiNil;
-            }
-
-            /**
-             * Sets the value of the xsiNil property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setXsiNil(String value) {
-                this.xsiNil = value;
-            }
-
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="category" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="membersBudget">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="resourcesProvidedByTheHouse">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="travelPoints" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                   &lt;element name="total">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="subCategories" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                 &lt;/sequence>
-         *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                 &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                 &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "category"
-        })
-        public static class ExpenditureCategories {
-
-            @XmlElement(required = true)
-            protected List<MemberExpenditureReports.Report.ExpenditureCategories.Category> category;
-
-            /**
-             * Gets the value of the category property.
-             * 
-             * <p>
-             * This accessor method returns a reference to the live list,
-             * not a snapshot. Therefore any modification you make to the
-             * returned list will be present inside the JAXB object.
-             * This is why there is not a <CODE>set</CODE> method for the category property.
-             * 
-             * <p>
-             * For example, to add a new item, do as follows:
-             * <pre>
-             *    getCategory().add(newItem);
-             * </pre>
-             * 
-             * 
-             * <p>
-             * Objects of the following type(s) are allowed in the list
-             * {@link MemberExpenditureReports.Report.ExpenditureCategories.Category }
-             * 
-             * 
-             */
-            public List<MemberExpenditureReports.Report.ExpenditureCategories.Category> getCategory() {
-                if (category == null) {
-                    category = new ArrayList<MemberExpenditureReports.Report.ExpenditureCategories.Category>();
-                }
-                return this.category;
-            }
-
-
-            /**
-             * <p>Java class for anonymous complex type.
-             * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="membersBudget">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="resourcesProvidedByTheHouse">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="travelPoints" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *         &lt;element name="total">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="subCategories" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *       &lt;/sequence>
-             *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *       &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *       &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
-             * 
-             */
-            @XmlAccessorType(XmlAccessType.FIELD)
-            @XmlType(name = "", propOrder = {
-                "membersBudget",
-                "resourcesProvidedByTheHouse",
-                "travelPoints",
-                "total",
-                "subCategories"
-            })
-            public static class Category {
-
-                @XmlElement(required = true)
-                protected MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget membersBudget;
-                @XmlElement(required = true)
-                protected MemberExpenditureReports.Report.ExpenditureCategories.Category.ResourcesProvidedByTheHouse resourcesProvidedByTheHouse;
-                @XmlElement(required = true)
-                protected Object travelPoints;
-                @XmlElement(required = true)
-                protected MemberExpenditureReports.Report.ExpenditureCategories.Category.Total total;
-                @XmlElement(required = true)
-                protected Object subCategories;
-                @XmlAttribute(name = "id")
-                protected String id;
-                @XmlAttribute(name = "name-en")
-                protected String nameEn;
-                @XmlAttribute(name = "name-fr")
-                protected String nameFr;
-
-                /**
-                 * Gets the value of the membersBudget property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget }
-                 *     
-                 */
-                public MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget getMembersBudget() {
-                    return membersBudget;
-                }
-
-                /**
-                 * Sets the value of the membersBudget property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget }
-                 *     
-                 */
-                public void setMembersBudget(MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget value) {
-                    this.membersBudget = value;
-                }
-
-                /**
-                 * Gets the value of the resourcesProvidedByTheHouse property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.ResourcesProvidedByTheHouse }
-                 *     
-                 */
-                public MemberExpenditureReports.Report.ExpenditureCategories.Category.ResourcesProvidedByTheHouse getResourcesProvidedByTheHouse() {
-                    return resourcesProvidedByTheHouse;
-                }
-
-                /**
-                 * Sets the value of the resourcesProvidedByTheHouse property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.ResourcesProvidedByTheHouse }
-                 *     
-                 */
-                public void setResourcesProvidedByTheHouse(MemberExpenditureReports.Report.ExpenditureCategories.Category.ResourcesProvidedByTheHouse value) {
-                    this.resourcesProvidedByTheHouse = value;
-                }
-
-                /**
-                 * Gets the value of the travelPoints property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link Object }
-                 *     
-                 */
-                public Object getTravelPoints() {
-                    return travelPoints;
-                }
-
-                /**
-                 * Sets the value of the travelPoints property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link Object }
-                 *     
-                 */
-                public void setTravelPoints(Object value) {
-                    this.travelPoints = value;
-                }
-
-                /**
-                 * Gets the value of the total property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.Total }
-                 *     
-                 */
-                public MemberExpenditureReports.Report.ExpenditureCategories.Category.Total getTotal() {
-                    return total;
-                }
-
-                /**
-                 * Sets the value of the total property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.Total }
-                 *     
-                 */
-                public void setTotal(MemberExpenditureReports.Report.ExpenditureCategories.Category.Total value) {
-                    this.total = value;
-                }
-
-                /**
-                 * Gets the value of the subCategories property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link Object }
-                 *     
-                 */
-                public Object getSubCategories() {
-                    return subCategories;
-                }
-
-                /**
-                 * Sets the value of the subCategories property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link Object }
-                 *     
-                 */
-                public void setSubCategories(Object value) {
-                    this.subCategories = value;
-                }
-
-                /**
-                 * Gets the value of the id property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link String }
-                 *     
-                 */
-                public String getId() {
-                    return id;
-                }
-
-                /**
-                 * Sets the value of the id property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link String }
-                 *     
-                 */
-                public void setId(String value) {
-                    this.id = value;
-                }
-
-                /**
-                 * Gets the value of the nameEn property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link String }
-                 *     
-                 */
-                public String getNameEn() {
-                    return nameEn;
-                }
-
-                /**
-                 * Sets the value of the nameEn property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link String }
-                 *     
-                 */
-                public void setNameEn(String value) {
-                    this.nameEn = value;
-                }
-
-                /**
-                 * Gets the value of the nameFr property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link String }
-                 *     
-                 */
-                public String getNameFr() {
-                    return nameFr;
-                }
-
-                /**
-                 * Sets the value of the nameFr property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link String }
-                 *     
-                 */
-                public void setNameFr(String value) {
-                    this.nameFr = value;
-                }
-
-
-                /**
-                 * <p>Java class for anonymous complex type.
-                 * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
-                 * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-                 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
-                 * </pre>
-                 * 
-                 * 
-                 */
-                @XmlAccessorType(XmlAccessType.FIELD)
-                @XmlType(name = "")
-                public static class MembersBudget {
-
-                    @XmlAttribute(name = "value")
-                    protected Double value;
-                    @XmlAttribute(name = "currency")
-                    protected String currency;
-
-                    /**
-                     * Gets the value of the value property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link Double }
-                     *     
-                     */
-                    public Double getValue() {
-                        return value;
-                    }
-
-                    /**
-                     * Sets the value of the value property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link Double }
-                     *     
-                     */
-                    public void setValue(Double value) {
-                        this.value = value;
-                    }
-
-                    /**
-                     * Gets the value of the currency property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
-                     */
-                    public String getCurrency() {
-                        return currency;
-                    }
-
-                    /**
-                     * Sets the value of the currency property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
-                     */
-                    public void setCurrency(String value) {
-                        this.currency = value;
-                    }
-
-                }
-
-
-                /**
-                 * <p>Java class for anonymous complex type.
-                 * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
-                 * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
-                 * </pre>
-                 * 
-                 * 
-                 */
-                @XmlAccessorType(XmlAccessType.FIELD)
-                @XmlType(name = "")
-                public static class ResourcesProvidedByTheHouse {
-
-                    @XmlAttribute(name = "xsi:nil")
-                    protected String xsiNil;
-
-                    /**
-                     * Gets the value of the xsiNil property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
-                     */
-                    public String getXsiNil() {
-                        return xsiNil;
-                    }
-
-                    /**
-                     * Sets the value of the xsiNil property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
-                     */
-                    public void setXsiNil(String value) {
-                        this.xsiNil = value;
-                    }
-
-                }
-
-
-                /**
-                 * <p>Java class for anonymous complex type.
-                 * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
-                 * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-                 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
-                 * </pre>
-                 * 
-                 * 
-                 */
-                @XmlAccessorType(XmlAccessType.FIELD)
-                @XmlType(name = "")
-                public static class Total {
-
-                    @XmlAttribute(name = "value")
-                    protected Double value;
-                    @XmlAttribute(name = "currency")
-                    protected String currency;
-
-                    /**
-                     * Gets the value of the value property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link Double }
-                     *     
-                     */
-                    public Double getValue() {
-                        return value;
-                    }
-
-                    /**
-                     * Sets the value of the value property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link Double }
-                     *     
-                     */
-                    public void setValue(Double value) {
-                        this.value = value;
-                    }
-
-                    /**
-                     * Gets the value of the currency property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
-                     */
-                    public String getCurrency() {
-                        return currency;
-                    }
-
-                    /**
-                     * Sets the value of the currency property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
-                     */
-                    public void setCurrency(String value) {
-                        this.currency = value;
-                    }
-
-                }
-
-            }
-
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="membersBudget">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="resourcesProvidedByTheHouse">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="travelPoints">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="points" maxOccurs="unbounded">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="total">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "membersBudget",
-            "resourcesProvidedByTheHouse",
-            "travelPoints",
-            "total"
-        })
-        public static class ExpenditureTotals {
-
-            @XmlElement(required = true)
-            protected MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget membersBudget;
-            @XmlElement(required = true)
-            protected MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse resourcesProvidedByTheHouse;
-            @XmlElement(required = true)
-            protected MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints travelPoints;
-            @XmlElement(required = true)
-            protected MemberExpenditureReports.Report.ExpenditureTotals.Total total;
-
-            /**
-             * Gets the value of the membersBudget property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget }
-             *     
-             */
-            public MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget getMembersBudget() {
-                return membersBudget;
-            }
-
-            /**
-             * Sets the value of the membersBudget property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget }
-             *     
-             */
-            public void setMembersBudget(MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget value) {
-                this.membersBudget = value;
-            }
-
-            /**
-             * Gets the value of the resourcesProvidedByTheHouse property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse }
-             *     
-             */
-            public MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse getResourcesProvidedByTheHouse() {
-                return resourcesProvidedByTheHouse;
-            }
-
-            /**
-             * Sets the value of the resourcesProvidedByTheHouse property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse }
-             *     
-             */
-            public void setResourcesProvidedByTheHouse(MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse value) {
-                this.resourcesProvidedByTheHouse = value;
-            }
-
-            /**
-             * Gets the value of the travelPoints property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints }
-             *     
-             */
-            public MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints getTravelPoints() {
-                return travelPoints;
-            }
-
-            /**
-             * Sets the value of the travelPoints property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints }
-             *     
-             */
-            public void setTravelPoints(MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints value) {
-                this.travelPoints = value;
-            }
-
-            /**
-             * Gets the value of the total property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.Total }
-             *     
-             */
-            public MemberExpenditureReports.Report.ExpenditureTotals.Total getTotal() {
-                return total;
-            }
-
-            /**
-             * Sets the value of the total property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link MemberExpenditureReports.Report.ExpenditureTotals.Total }
-             *     
-             */
-            public void setTotal(MemberExpenditureReports.Report.ExpenditureTotals.Total value) {
-                this.total = value;
-            }
-
-
-            /**
-             * <p>Java class for anonymous complex type.
-             * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
-             * 
-             */
-            @XmlAccessorType(XmlAccessType.FIELD)
-            @XmlType(name = "")
-            public static class MembersBudget {
-
-                @XmlAttribute(name = "value")
-                protected Double value;
-                @XmlAttribute(name = "currency")
-                protected String currency;
-
-                /**
-                 * Gets the value of the value property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link Double }
-                 *     
-                 */
-                public Double getValue() {
-                    return value;
-                }
-
-                /**
-                 * Sets the value of the value property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link Double }
-                 *     
-                 */
-                public void setValue(Double value) {
-                    this.value = value;
-                }
-
-                /**
-                 * Gets the value of the currency property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link String }
-                 *     
-                 */
-                public String getCurrency() {
-                    return currency;
-                }
-
-                /**
-                 * Sets the value of the currency property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link String }
-                 *     
-                 */
-                public void setCurrency(String value) {
-                    this.currency = value;
-                }
-
-            }
-
-
-            /**
-             * <p>Java class for anonymous complex type.
-             * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
-             * 
-             */
-            @XmlAccessorType(XmlAccessType.FIELD)
-            @XmlType(name = "")
-            public static class ResourcesProvidedByTheHouse {
-
-                @XmlAttribute(name = "value")
-                protected Double value;
-                @XmlAttribute(name = "currency")
-                protected String currency;
-
-                /**
-                 * Gets the value of the value property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link Double }
-                 *     
-                 */
-                public Double getValue() {
-                    return value;
-                }
-
-                /**
-                 * Sets the value of the value property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link Double }
-                 *     
-                 */
-                public void setValue(Double value) {
-                    this.value = value;
-                }
-
-                /**
-                 * Gets the value of the currency property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link String }
-                 *     
-                 */
-                public String getCurrency() {
-                    return currency;
-                }
-
-                /**
-                 * Sets the value of the currency property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link String }
-                 *     
-                 */
-                public void setCurrency(String value) {
-                    this.currency = value;
-                }
-
-            }
-
-
-            /**
-             * <p>Java class for anonymous complex type.
-             * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
-             * 
-             */
-            @XmlAccessorType(XmlAccessType.FIELD)
-            @XmlType(name = "")
-            public static class Total {
-
-                @XmlAttribute(name = "value")
-                protected Double value;
-                @XmlAttribute(name = "currency")
-                protected String currency;
-
-                /**
-                 * Gets the value of the value property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link Double }
-                 *     
-                 */
-                public Double getValue() {
-                    return value;
-                }
-
-                /**
-                 * Sets the value of the value property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link Double }
-                 *     
-                 */
-                public void setValue(Double value) {
-                    this.value = value;
-                }
-
-                /**
-                 * Gets the value of the currency property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link String }
-                 *     
-                 */
-                public String getCurrency() {
-                    return currency;
-                }
-
-                /**
-                 * Sets the value of the currency property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link String }
-                 *     
-                 */
-                public void setCurrency(String value) {
-                    this.currency = value;
-                }
-
-            }
-
-
-            /**
-             * <p>Java class for anonymous complex type.
-             * 
-             * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="points" maxOccurs="unbounded">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             * 
-             * 
-             */
-            @XmlAccessorType(XmlAccessType.FIELD)
-            @XmlType(name = "", propOrder = {
-                "points"
-            })
-            public static class TravelPoints {
-
-                @XmlElement(required = true)
-                protected List<MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points> points;
-
-                /**
-                 * Gets the value of the points property.
-                 * 
-                 * <p>
-                 * This accessor method returns a reference to the live list,
-                 * not a snapshot. Therefore any modification you make to the
-                 * returned list will be present inside the JAXB object.
-                 * This is why there is not a <CODE>set</CODE> method for the points property.
-                 * 
-                 * <p>
-                 * For example, to add a new item, do as follows:
-                 * <pre>
-                 *    getPoints().add(newItem);
-                 * </pre>
-                 * 
-                 * 
-                 * <p>
-                 * Objects of the following type(s) are allowed in the list
-                 * {@link MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points }
-                 * 
-                 * 
-                 */
-                public List<MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points> getPoints() {
-                    if (points == null) {
-                        points = new ArrayList<MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points>();
-                    }
-                    return this.points;
-                }
-
-
-                /**
-                 * <p>Java class for anonymous complex type.
-                 * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
-                 * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
-                 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
-                 * </pre>
-                 * 
-                 * 
-                 */
-                @XmlAccessorType(XmlAccessType.FIELD)
-                @XmlType(name = "")
-                public static class Points {
-
-                    @XmlAttribute(name = "type")
-                    protected String type;
-                    @XmlAttribute(name = "value")
-                    protected Double value;
-
-                    /**
-                     * Gets the value of the type property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
-                     */
-                    public String getType() {
-                        return type;
-                    }
-
-                    /**
-                     * Sets the value of the type property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
-                     */
-                    public void setType(String value) {
-                        this.type = value;
-                    }
-
-                    /**
-                     * Gets the value of the value property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link Double }
-                     *     
-                     */
-                    public Double getValue() {
-                        return value;
-                    }
-
-                    /**
-                     * Sets the value of the value property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link Double }
-                     *     
-                     */
-                    public void setValue(Double value) {
-                        this.value = value;
-                    }
-
-                }
-
-            }
-
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;attribute name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="status" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="party-en" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="party-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "")
-        public static class Member {
-
-            @XmlAttribute(name = "lastName")
-            protected String lastName;
-            @XmlAttribute(name = "firstName")
-            protected String firstName;
-            @XmlAttribute(name = "status")
-            protected String status;
-            @XmlAttribute(name = "party-en")
-            protected String partyEn;
-            @XmlAttribute(name = "party-fr")
-            protected String partyFr;
-
-            /**
-             * Gets the value of the lastName property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getLastName() {
-                return lastName;
-            }
-
-            /**
-             * Sets the value of the lastName property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setLastName(String value) {
-                this.lastName = value;
-            }
-
-            /**
-             * Gets the value of the firstName property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getFirstName() {
-                return firstName;
-            }
-
-            /**
-             * Sets the value of the firstName property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setFirstName(String value) {
-                this.firstName = value;
-            }
-
-            /**
-             * Gets the value of the status property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getStatus() {
-                return status;
-            }
-
-            /**
-             * Sets the value of the status property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setStatus(String value) {
-                this.status = value;
-            }
-
-            /**
-             * Gets the value of the partyEn property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getPartyEn() {
-                return partyEn;
-            }
-
-            /**
-             * Sets the value of the partyEn property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setPartyEn(String value) {
-                this.partyEn = value;
-            }
-
-            /**
-             * Gets the value of the partyFr property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getPartyFr() {
-                return partyFr;
-            }
-
-            /**
-             * Sets the value of the partyFr property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setPartyFr(String value) {
-                this.partyFr = value;
-            }
-
-        }
-
-    }
+	@XmlElement(required = true)
+	protected List<MemberExpenditureReports.Report> report;
+	@XmlAttribute(name = "id")
+	protected String id;
+	@XmlAttribute(name = "startDate")
+	@XmlSchemaType(name = "date")
+	protected XMLGregorianCalendar startDate;
+	@XmlAttribute(name = "endDate")
+	@XmlSchemaType(name = "date")
+	protected XMLGregorianCalendar endDate;
+
+	/**
+	 * Gets the value of the report property.
+	 * 
+	 * @return possible object is {@link MemberExpenditureReports.Report }
+	 * 
+	 */
+	public List<MemberExpenditureReports.Report> getReport() {
+		return report;
+	}
+
+	/**
+	 * Sets the value of the report property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link MemberExpenditureReports.Report }
+	 * 
+	 */
+	public void setReport(List<MemberExpenditureReports.Report> value) {
+		this.report = value;
+	}
+
+	/**
+	 * Gets the value of the id property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * Sets the value of the id property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setId(String value) {
+		this.id = value;
+	}
+
+	/**
+	 * Gets the value of the startDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getStartDate() {
+		return startDate;
+	}
+
+	/**
+	 * Sets the value of the startDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setStartDate(XMLGregorianCalendar value) {
+		this.startDate = value;
+	}
+
+	/**
+	 * Gets the value of the endDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getEndDate() {
+		return endDate;
+	}
+
+	/**
+	 * Sets the value of the endDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setEndDate(XMLGregorianCalendar value) {
+		this.endDate = value;
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained
+	 * within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
+	 *         &lt;element name="endDate">
+	 *           &lt;complexType>
+	 *             &lt;complexContent>
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                 &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *               &lt;/restriction>
+	 *             &lt;/complexContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *         &lt;element name="constituency">
+	 *           &lt;complexType>
+	 *             &lt;complexContent>
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}int" />
+	 *                 &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="numberOfElectors" type="{http://www.w3.org/2001/XMLSchema}int" />
+	 *                 &lt;attribute name="size" type="{http://www.w3.org/2001/XMLSchema}int" />
+	 *                 &lt;attribute name="sizeUnit" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="province" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *               &lt;/restriction>
+	 *             &lt;/complexContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *         &lt;element name="member">
+	 *           &lt;complexType>
+	 *             &lt;complexContent>
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                 &lt;attribute name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="status" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="party-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                 &lt;attribute name="party-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *               &lt;/restriction>
+	 *             &lt;/complexContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *         &lt;element name="expenditureCategories">
+	 *           &lt;complexType>
+	 *             &lt;complexContent>
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                 &lt;sequence>
+	 *                   &lt;element name="category" maxOccurs="unbounded">
+	 *                     &lt;complexType>
+	 *                       &lt;complexContent>
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                           &lt;sequence>
+	 *                             &lt;element name="membersBudget">
+	 *                               &lt;complexType>
+	 *                                 &lt;complexContent>
+	 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                                     &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+	 *                                     &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                                   &lt;/restriction>
+	 *                                 &lt;/complexContent>
+	 *                               &lt;/complexType>
+	 *                             &lt;/element>
+	 *                             &lt;element name="resourcesProvidedByTheHouse">
+	 *                               &lt;complexType>
+	 *                                 &lt;complexContent>
+	 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                                     &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                                   &lt;/restriction>
+	 *                                 &lt;/complexContent>
+	 *                               &lt;/complexType>
+	 *                             &lt;/element>
+	 *                             &lt;element name="travelPoints" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+	 *                             &lt;element name="total">
+	 *                               &lt;complexType>
+	 *                                 &lt;complexContent>
+	 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                                     &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+	 *                                     &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                                   &lt;/restriction>
+	 *                                 &lt;/complexContent>
+	 *                               &lt;/complexType>
+	 *                             &lt;/element>
+	 *                             &lt;element name="subCategories" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+	 *                           &lt;/sequence>
+	 *                           &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                           &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                           &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                         &lt;/restriction>
+	 *                       &lt;/complexContent>
+	 *                     &lt;/complexType>
+	 *                   &lt;/element>
+	 *                 &lt;/sequence>
+	 *               &lt;/restriction>
+	 *             &lt;/complexContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *         &lt;element name="expenditureTotals">
+	 *           &lt;complexType>
+	 *             &lt;complexContent>
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                 &lt;sequence>
+	 *                   &lt;element name="membersBudget">
+	 *                     &lt;complexType>
+	 *                       &lt;complexContent>
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+	 *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                         &lt;/restriction>
+	 *                       &lt;/complexContent>
+	 *                     &lt;/complexType>
+	 *                   &lt;/element>
+	 *                   &lt;element name="resourcesProvidedByTheHouse">
+	 *                     &lt;complexType>
+	 *                       &lt;complexContent>
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+	 *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                         &lt;/restriction>
+	 *                       &lt;/complexContent>
+	 *                     &lt;/complexType>
+	 *                   &lt;/element>
+	 *                   &lt;element name="travelPoints">
+	 *                     &lt;complexType>
+	 *                       &lt;complexContent>
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                           &lt;sequence>
+	 *                             &lt;element name="points" maxOccurs="unbounded">
+	 *                               &lt;complexType>
+	 *                                 &lt;complexContent>
+	 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                                     &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                                     &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+	 *                                   &lt;/restriction>
+	 *                                 &lt;/complexContent>
+	 *                               &lt;/complexType>
+	 *                             &lt;/element>
+	 *                           &lt;/sequence>
+	 *                         &lt;/restriction>
+	 *                       &lt;/complexContent>
+	 *                     &lt;/complexType>
+	 *                   &lt;/element>
+	 *                   &lt;element name="total">
+	 *                     &lt;complexType>
+	 *                       &lt;complexContent>
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+	 *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *                         &lt;/restriction>
+	 *                       &lt;/complexContent>
+	 *                     &lt;/complexType>
+	 *                   &lt;/element>
+	 *                 &lt;/sequence>
+	 *               &lt;/restriction>
+	 *             &lt;/complexContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *         &lt;element name="footnote" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+	 *       &lt;/sequence>
+	 *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = { "startDate", "constituency",
+			"member", "expenditureCategories", "expenditureTotals", "footnote" })
+	public static class Report {
+
+		@XmlElement(required = true)
+		@XmlSchemaType(name = "date")
+		protected XMLGregorianCalendar startDate;
+		@XmlElement(required = true)
+		protected MemberExpenditureReports.Report.Constituency constituency;
+		@XmlElement(required = true)
+		protected MemberExpenditureReports.Report.Member member;
+		@XmlElement(required = true)
+		protected MemberExpenditureReports.Report.ExpenditureCategories expenditureCategories;
+		@XmlElement(required = true)
+		protected MemberExpenditureReports.Report.ExpenditureTotals expenditureTotals;
+		@XmlElement(required = true)
+		protected Object footnote;
+		@XmlAttribute(name = "type")
+		protected String type;
+
+		/**
+		 * Gets the value of the startDate property.
+		 * 
+		 * @return possible object is {@link XMLGregorianCalendar }
+		 * 
+		 */
+		public XMLGregorianCalendar getStartDate() {
+			return startDate;
+		}
+
+		/**
+		 * Sets the value of the startDate property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link XMLGregorianCalendar }
+		 * 
+		 */
+		public void setStartDate(XMLGregorianCalendar value) {
+			this.startDate = value;
+		}
+
+		/**
+		 * Gets the value of the constituency property.
+		 * 
+		 * @return possible object is
+		 *         {@link MemberExpenditureReports.Report.Constituency }
+		 * 
+		 */
+		public MemberExpenditureReports.Report.Constituency getConstituency() {
+			return constituency;
+		}
+
+		/**
+		 * Sets the value of the constituency property.
+		 * 
+		 * @param value
+		 *            allowed object is
+		 *            {@link MemberExpenditureReports.Report.Constituency }
+		 * 
+		 */
+		public void setConstituency(
+				MemberExpenditureReports.Report.Constituency value) {
+			this.constituency = value;
+		}
+
+		/**
+		 * Gets the value of the member property.
+		 * 
+		 * @return possible object is
+		 *         {@link MemberExpenditureReports.Report.Member }
+		 * 
+		 */
+		public MemberExpenditureReports.Report.Member getMember() {
+			return member;
+		}
+
+		/**
+		 * Sets the value of the member property.
+		 * 
+		 * @param value
+		 *            allowed object is
+		 *            {@link MemberExpenditureReports.Report.Member }
+		 * 
+		 */
+		public void setMember(MemberExpenditureReports.Report.Member value) {
+			this.member = value;
+		}
+
+		/**
+		 * Gets the value of the expenditureCategories property.
+		 * 
+		 * @return possible object is
+		 *         {@link MemberExpenditureReports.Report.ExpenditureCategories }
+		 * 
+		 */
+		public MemberExpenditureReports.Report.ExpenditureCategories getExpenditureCategories() {
+			return expenditureCategories;
+		}
+
+		/**
+		 * Sets the value of the expenditureCategories property.
+		 * 
+		 * @param value
+		 *            allowed object is
+		 *            {@link MemberExpenditureReports.Report.ExpenditureCategories }
+		 * 
+		 */
+		public void setExpenditureCategories(
+				MemberExpenditureReports.Report.ExpenditureCategories value) {
+			this.expenditureCategories = value;
+		}
+
+		/**
+		 * Gets the value of the expenditureTotals property.
+		 * 
+		 * @return possible object is
+		 *         {@link MemberExpenditureReports.Report.ExpenditureTotals }
+		 * 
+		 */
+		public MemberExpenditureReports.Report.ExpenditureTotals getExpenditureTotals() {
+			return expenditureTotals;
+		}
+
+		/**
+		 * Sets the value of the expenditureTotals property.
+		 * 
+		 * @param value
+		 *            allowed object is
+		 *            {@link MemberExpenditureReports.Report.ExpenditureTotals }
+		 * 
+		 */
+		public void setExpenditureTotals(
+				MemberExpenditureReports.Report.ExpenditureTotals value) {
+			this.expenditureTotals = value;
+		}
+
+		/**
+		 * Gets the value of the footnote property.
+		 * 
+		 * @return possible object is {@link Object }
+		 * 
+		 */
+		public Object getFootnote() {
+			return footnote;
+		}
+
+		/**
+		 * Sets the value of the footnote property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link Object }
+		 * 
+		 */
+		public void setFootnote(Object value) {
+			this.footnote = value;
+		}
+
+		/**
+		 * Gets the value of the type property.
+		 * 
+		 * @return possible object is {@link String }
+		 * 
+		 */
+		public String getType() {
+			return type;
+		}
+
+		/**
+		 * Sets the value of the type property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link String }
+		 * 
+		 */
+		public void setType(String value) {
+			this.type = value;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content
+		 * contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;complexContent>
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}int" />
+		 *       &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="numberOfElectors" type="{http://www.w3.org/2001/XMLSchema}int" />
+		 *       &lt;attribute name="size" type="{http://www.w3.org/2001/XMLSchema}int" />
+		 *       &lt;attribute name="sizeUnit" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="province" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *     &lt;/restriction>
+		 *   &lt;/complexContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "")
+		public static class Constituency {
+
+			@XmlAttribute(name = "id")
+			protected Integer id;
+			@XmlAttribute(name = "name-en")
+			protected String nameEn;
+			@XmlAttribute(name = "name-fr")
+			protected String nameFr;
+			@XmlAttribute(name = "numberOfElectors")
+			protected Integer numberOfElectors;
+			@XmlAttribute(name = "size")
+			protected Integer size;
+			@XmlAttribute(name = "sizeUnit")
+			protected String sizeUnit;
+			@XmlAttribute(name = "province")
+			protected String province;
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Integer }
+			 * 
+			 */
+			public Integer getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Integer }
+			 * 
+			 */
+			public void setId(Integer value) {
+				this.id = value;
+			}
+
+			/**
+			 * Gets the value of the nameEn property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getNameEn() {
+				return nameEn;
+			}
+
+			/**
+			 * Sets the value of the nameEn property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setNameEn(String value) {
+				this.nameEn = value;
+			}
+
+			/**
+			 * Gets the value of the nameFr property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getNameFr() {
+				return nameFr;
+			}
+
+			/**
+			 * Sets the value of the nameFr property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setNameFr(String value) {
+				this.nameFr = value;
+			}
+
+			/**
+			 * Gets the value of the numberOfElectors property.
+			 * 
+			 * @return possible object is {@link Integer }
+			 * 
+			 */
+			public Integer getNumberOfElectors() {
+				return numberOfElectors;
+			}
+
+			/**
+			 * Sets the value of the numberOfElectors property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Integer }
+			 * 
+			 */
+			public void setNumberOfElectors(Integer value) {
+				this.numberOfElectors = value;
+			}
+
+			/**
+			 * Gets the value of the size property.
+			 * 
+			 * @return possible object is {@link Integer }
+			 * 
+			 */
+			public Integer getSize() {
+				return size;
+			}
+
+			/**
+			 * Sets the value of the size property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Integer }
+			 * 
+			 */
+			public void setSize(Integer value) {
+				this.size = value;
+			}
+
+			/**
+			 * Gets the value of the sizeUnit property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getSizeUnit() {
+				return sizeUnit;
+			}
+
+			/**
+			 * Sets the value of the sizeUnit property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setSizeUnit(String value) {
+				this.sizeUnit = value;
+			}
+
+			/**
+			 * Gets the value of the province property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getProvince() {
+				return province;
+			}
+
+			/**
+			 * Sets the value of the province property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setProvince(String value) {
+				this.province = value;
+			}
+
+		}
+
+	
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content
+		 * contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;complexContent>
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *       &lt;sequence>
+		 *         &lt;element name="category" maxOccurs="unbounded">
+		 *           &lt;complexType>
+		 *             &lt;complexContent>
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                 &lt;sequence>
+		 *                   &lt;element name="membersBudget">
+		 *                     &lt;complexType>
+		 *                       &lt;complexContent>
+		 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+		 *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *                         &lt;/restriction>
+		 *                       &lt;/complexContent>
+		 *                     &lt;/complexType>
+		 *                   &lt;/element>
+		 *                   &lt;element name="resourcesProvidedByTheHouse">
+		 *                     &lt;complexType>
+		 *                       &lt;complexContent>
+		 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                           &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *                         &lt;/restriction>
+		 *                       &lt;/complexContent>
+		 *                     &lt;/complexType>
+		 *                   &lt;/element>
+		 *                   &lt;element name="travelPoints" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+		 *                   &lt;element name="total">
+		 *                     &lt;complexType>
+		 *                       &lt;complexContent>
+		 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+		 *                           &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *                         &lt;/restriction>
+		 *                       &lt;/complexContent>
+		 *                     &lt;/complexType>
+		 *                   &lt;/element>
+		 *                   &lt;element name="subCategories" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+		 *                 &lt;/sequence>
+		 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *                 &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *                 &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *               &lt;/restriction>
+		 *             &lt;/complexContent>
+		 *           &lt;/complexType>
+		 *         &lt;/element>
+		 *       &lt;/sequence>
+		 *     &lt;/restriction>
+		 *   &lt;/complexContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = { "category" })
+		public static class ExpenditureCategories {
+
+			@XmlElement(required = true)
+			protected List<MemberExpenditureReports.Report.ExpenditureCategories.Category> category;
+
+			/**
+			 * Gets the value of the category property.
+			 * 
+			 * <p>
+			 * This accessor method returns a reference to the live list, not a
+			 * snapshot. Therefore any modification you make to the returned
+			 * list will be present inside the JAXB object. This is why there is
+			 * not a <CODE>set</CODE> method for the category property.
+			 * 
+			 * <p>
+			 * For example, to add a new item, do as follows:
+			 * 
+			 * <pre>
+			 * getCategory().add(newItem);
+			 * </pre>
+			 * 
+			 * 
+			 * <p>
+			 * Objects of the following type(s) are allowed in the list
+			 * {@link MemberExpenditureReports.Report.ExpenditureCategories.Category }
+			 * 
+			 * 
+			 */
+			public List<MemberExpenditureReports.Report.ExpenditureCategories.Category> getCategory() {
+				if (category == null) {
+					category = new ArrayList<MemberExpenditureReports.Report.ExpenditureCategories.Category>();
+				}
+				return this.category;
+			}
+
+			/**
+			 * <p>
+			 * Java class for anonymous complex type.
+			 * 
+			 * <p>
+			 * The following schema fragment specifies the expected content
+			 * contained within this class.
+			 * 
+			 * <pre>
+			 * &lt;complexType>
+			 *   &lt;complexContent>
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *       &lt;sequence>
+			 *         &lt;element name="membersBudget">
+			 *           &lt;complexType>
+			 *             &lt;complexContent>
+			 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+			 *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *               &lt;/restriction>
+			 *             &lt;/complexContent>
+			 *           &lt;/complexType>
+			 *         &lt;/element>
+			 *         &lt;element name="resourcesProvidedByTheHouse">
+			 *           &lt;complexType>
+			 *             &lt;complexContent>
+			 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *                 &lt;attribute name="xsi:nil" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *               &lt;/restriction>
+			 *             &lt;/complexContent>
+			 *           &lt;/complexType>
+			 *         &lt;/element>
+			 *         &lt;element name="travelPoints" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+			 *         &lt;element name="total">
+			 *           &lt;complexType>
+			 *             &lt;complexContent>
+			 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+			 *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *               &lt;/restriction>
+			 *             &lt;/complexContent>
+			 *           &lt;/complexType>
+			 *         &lt;/element>
+			 *         &lt;element name="subCategories" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+			 *       &lt;/sequence>
+			 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *       &lt;attribute name="name-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *       &lt;attribute name="name-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *     &lt;/restriction>
+			 *   &lt;/complexContent>
+			 * &lt;/complexType>
+			 * </pre>
+			 * 
+			 * 
+			 */
+			@XmlAccessorType(XmlAccessType.FIELD)
+			@XmlType(name = "", propOrder = { "membersBudget",
+					 "travelPoints", "total",
+					"subCategories" })
+			public static class Category {
+
+				@XmlElement(required = true)
+				protected MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget membersBudget;
+				@XmlElement(required = true)
+				protected Object travelPoints;
+				@XmlElement(required = true)
+				protected MemberExpenditureReports.Report.ExpenditureCategories.Category.Total total;
+				@XmlElement(required = true)
+				protected Object subCategories;
+				@XmlAttribute(name = "id")
+				protected String id;
+				@XmlAttribute(name = "name-en")
+				protected String nameEn;
+				@XmlAttribute(name = "name-fr")
+				protected String nameFr;
+
+				/**
+				 * Gets the value of the membersBudget property.
+				 * 
+				 * @return possible object is
+				 *         {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget }
+				 * 
+				 */
+				public MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget getMembersBudget() {
+					return membersBudget;
+				}
+
+				/**
+				 * Sets the value of the membersBudget property.
+				 * 
+				 * @param value
+				 *            allowed object is
+				 *            {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget }
+				 * 
+				 */
+				public void setMembersBudget(
+						MemberExpenditureReports.Report.ExpenditureCategories.Category.MembersBudget value) {
+					this.membersBudget = value;
+				}
+
+			
+
+
+				/**
+				 * Gets the value of the travelPoints property.
+				 * 
+				 * @return possible object is {@link Object }
+				 * 
+				 */
+				public Object getTravelPoints() {
+					return travelPoints;
+				}
+
+				/**
+				 * Sets the value of the travelPoints property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link Object }
+				 * 
+				 */
+				public void setTravelPoints(Object value) {
+					this.travelPoints = value;
+				}
+
+				/**
+				 * Gets the value of the total property.
+				 * 
+				 * @return possible object is
+				 *         {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.Total }
+				 * 
+				 */
+				public MemberExpenditureReports.Report.ExpenditureCategories.Category.Total getTotal() {
+					return total;
+				}
+
+				/**
+				 * Sets the value of the total property.
+				 * 
+				 * @param value
+				 *            allowed object is
+				 *            {@link MemberExpenditureReports.Report.ExpenditureCategories.Category.Total }
+				 * 
+				 */
+				public void setTotal(
+						MemberExpenditureReports.Report.ExpenditureCategories.Category.Total value) {
+					this.total = value;
+				}
+
+				/**
+				 * Gets the value of the subCategories property.
+				 * 
+				 * @return possible object is {@link Object }
+				 * 
+				 */
+				public Object getSubCategories() {
+					return subCategories;
+				}
+
+				/**
+				 * Sets the value of the subCategories property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link Object }
+				 * 
+				 */
+				public void setSubCategories(Object value) {
+					this.subCategories = value;
+				}
+
+				/**
+				 * Gets the value of the id property.
+				 * 
+				 * @return possible object is {@link String }
+				 * 
+				 */
+				public String getId() {
+					return id;
+				}
+
+				/**
+				 * Sets the value of the id property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link String }
+				 * 
+				 */
+				public void setId(String value) {
+					this.id = value;
+				}
+
+				/**
+				 * Gets the value of the nameEn property.
+				 * 
+				 * @return possible object is {@link String }
+				 * 
+				 */
+				public String getNameEn() {
+					return nameEn;
+				}
+
+				/**
+				 * Sets the value of the nameEn property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link String }
+				 * 
+				 */
+				public void setNameEn(String value) {
+					this.nameEn = value;
+				}
+
+				/**
+				 * Gets the value of the nameFr property.
+				 * 
+				 * @return possible object is {@link String }
+				 * 
+				 */
+				public String getNameFr() {
+					return nameFr;
+				}
+
+				/**
+				 * Sets the value of the nameFr property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link String }
+				 * 
+				 */
+				public void setNameFr(String value) {
+					this.nameFr = value;
+				}
+
+				/**
+				 * <p>
+				 * Java class for anonymous complex type.
+				 * 
+				 * <p>
+				 * The following schema fragment specifies the expected content
+				 * contained within this class.
+				 * 
+				 * <pre>
+				 * &lt;complexType>
+				 *   &lt;complexContent>
+				 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+				 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+				 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+				 *     &lt;/restriction>
+				 *   &lt;/complexContent>
+				 * &lt;/complexType>
+				 * </pre>
+				 * 
+				 * 
+				 */
+				@XmlAccessorType(XmlAccessType.FIELD)
+				@XmlType(name = "")
+				public static class MembersBudget {
+
+					@XmlAttribute(name = "value")
+					protected Double value;
+					@XmlAttribute(name = "currency")
+					protected String currency;
+
+					/**
+					 * Gets the value of the value property.
+					 * 
+					 * @return possible object is {@link Double }
+					 * 
+					 */
+					public Double getValue() {
+						return value;
+					}
+
+					/**
+					 * Sets the value of the value property.
+					 * 
+					 * @param value
+					 *            allowed object is {@link Double }
+					 * 
+					 */
+					public void setValue(Double value) {
+						this.value = value;
+					}
+
+					/**
+					 * Gets the value of the currency property.
+					 * 
+					 * @return possible object is {@link String }
+					 * 
+					 */
+					public String getCurrency() {
+						return currency;
+					}
+
+					/**
+					 * Sets the value of the currency property.
+					 * 
+					 * @param value
+					 *            allowed object is {@link String }
+					 * 
+					 */
+					public void setCurrency(String value) {
+						this.currency = value;
+					}
+
+				}
+
+				
+
+				/**
+				 * <p>
+				 * Java class for anonymous complex type.
+				 * 
+				 * <p>
+				 * The following schema fragment specifies the expected content
+				 * contained within this class.
+				 * 
+				 * <pre>
+				 * &lt;complexType>
+				 *   &lt;complexContent>
+				 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+				 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+				 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+				 *     &lt;/restriction>
+				 *   &lt;/complexContent>
+				 * &lt;/complexType>
+				 * </pre>
+				 * 
+				 * 
+				 */
+				@XmlAccessorType(XmlAccessType.FIELD)
+				@XmlType(name = "")
+				public static class Total {
+
+					@XmlAttribute(name = "value")
+					protected Double value;
+					@XmlAttribute(name = "currency")
+					protected String currency;
+
+					/**
+					 * Gets the value of the value property.
+					 * 
+					 * @return possible object is {@link Double }
+					 * 
+					 */
+					public Double getValue() {
+						return value;
+					}
+
+					/**
+					 * Sets the value of the value property.
+					 * 
+					 * @param value
+					 *            allowed object is {@link Double }
+					 * 
+					 */
+					public void setValue(Double value) {
+						this.value = value;
+					}
+
+					/**
+					 * Gets the value of the currency property.
+					 * 
+					 * @return possible object is {@link String }
+					 * 
+					 */
+					public String getCurrency() {
+						return currency;
+					}
+
+					/**
+					 * Sets the value of the currency property.
+					 * 
+					 * @param value
+					 *            allowed object is {@link String }
+					 * 
+					 */
+					public void setCurrency(String value) {
+						this.currency = value;
+					}
+
+				}
+
+			}
+
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content
+		 * contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;complexContent>
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *       &lt;sequence>
+		 *         &lt;element name="membersBudget">
+		 *           &lt;complexType>
+		 *             &lt;complexContent>
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+		 *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *               &lt;/restriction>
+		 *             &lt;/complexContent>
+		 *           &lt;/complexType>
+		 *         &lt;/element>
+		 *         &lt;element name="resourcesProvidedByTheHouse">
+		 *           &lt;complexType>
+		 *             &lt;complexContent>
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+		 *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *               &lt;/restriction>
+		 *             &lt;/complexContent>
+		 *           &lt;/complexType>
+		 *         &lt;/element>
+		 *         &lt;element name="travelPoints">
+		 *           &lt;complexType>
+		 *             &lt;complexContent>
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                 &lt;sequence>
+		 *                   &lt;element name="points" maxOccurs="unbounded">
+		 *                     &lt;complexType>
+		 *                       &lt;complexContent>
+		 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                           &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *                           &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+		 *                         &lt;/restriction>
+		 *                       &lt;/complexContent>
+		 *                     &lt;/complexType>
+		 *                   &lt;/element>
+		 *                 &lt;/sequence>
+		 *               &lt;/restriction>
+		 *             &lt;/complexContent>
+		 *           &lt;/complexType>
+		 *         &lt;/element>
+		 *         &lt;element name="total">
+		 *           &lt;complexType>
+		 *             &lt;complexContent>
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+		 *                 &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *               &lt;/restriction>
+		 *             &lt;/complexContent>
+		 *           &lt;/complexType>
+		 *         &lt;/element>
+		 *       &lt;/sequence>
+		 *     &lt;/restriction>
+		 *   &lt;/complexContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = { "membersBudget",
+				"resourcesProvidedByTheHouse", "travelPoints", "total" })
+		public static class ExpenditureTotals {
+
+			@XmlElement(required = true)
+			protected MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget membersBudget;
+			@XmlElement(required = true)
+			protected MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse resourcesProvidedByTheHouse;
+			@XmlElement(required = true)
+			protected MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints travelPoints;
+			@XmlElement(required = true)
+			protected MemberExpenditureReports.Report.ExpenditureTotals.Total total;
+
+			/**
+			 * Gets the value of the membersBudget property.
+			 * 
+			 * @return possible object is
+			 *         {@link MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget }
+			 * 
+			 */
+			public MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget getMembersBudget() {
+				return membersBudget;
+			}
+
+			/**
+			 * Sets the value of the membersBudget property.
+			 * 
+			 * @param value
+			 *            allowed object is
+			 *            {@link MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget }
+			 * 
+			 */
+			public void setMembersBudget(
+					MemberExpenditureReports.Report.ExpenditureTotals.MembersBudget value) {
+				this.membersBudget = value;
+			}
+
+			/**
+			 * Gets the value of the resourcesProvidedByTheHouse property.
+			 * 
+			 * @return possible object is
+			 *         {@link MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse }
+			 * 
+			 */
+			public MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse getResourcesProvidedByTheHouse() {
+				return resourcesProvidedByTheHouse;
+			}
+
+			/**
+			 * Sets the value of the resourcesProvidedByTheHouse property.
+			 * 
+			 * @param value
+			 *            allowed object is
+			 *            {@link MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse }
+			 * 
+			 */
+			public void setResourcesProvidedByTheHouse(
+					MemberExpenditureReports.Report.ExpenditureTotals.ResourcesProvidedByTheHouse value) {
+				this.resourcesProvidedByTheHouse = value;
+			}
+
+			/**
+			 * Gets the value of the travelPoints property.
+			 * 
+			 * @return possible object is
+			 *         {@link MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints }
+			 * 
+			 */
+			public MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints getTravelPoints() {
+				return travelPoints;
+			}
+
+			/**
+			 * Sets the value of the travelPoints property.
+			 * 
+			 * @param value
+			 *            allowed object is
+			 *            {@link MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints }
+			 * 
+			 */
+			public void setTravelPoints(
+					MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints value) {
+				this.travelPoints = value;
+			}
+
+			/**
+			 * Gets the value of the total property.
+			 * 
+			 * @return possible object is
+			 *         {@link MemberExpenditureReports.Report.ExpenditureTotals.Total }
+			 * 
+			 */
+			public MemberExpenditureReports.Report.ExpenditureTotals.Total getTotal() {
+				return total;
+			}
+
+			/**
+			 * Sets the value of the total property.
+			 * 
+			 * @param value
+			 *            allowed object is
+			 *            {@link MemberExpenditureReports.Report.ExpenditureTotals.Total }
+			 * 
+			 */
+			public void setTotal(
+					MemberExpenditureReports.Report.ExpenditureTotals.Total value) {
+				this.total = value;
+			}
+
+			/**
+			 * <p>
+			 * Java class for anonymous complex type.
+			 * 
+			 * <p>
+			 * The following schema fragment specifies the expected content
+			 * contained within this class.
+			 * 
+			 * <pre>
+			 * &lt;complexType>
+			 *   &lt;complexContent>
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+			 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *     &lt;/restriction>
+			 *   &lt;/complexContent>
+			 * &lt;/complexType>
+			 * </pre>
+			 * 
+			 * 
+			 */
+			@XmlAccessorType(XmlAccessType.FIELD)
+			@XmlType(name = "")
+			public static class MembersBudget {
+
+				@XmlAttribute(name = "value")
+				protected Double value;
+				@XmlAttribute(name = "currency")
+				protected String currency;
+
+				/**
+				 * Gets the value of the value property.
+				 * 
+				 * @return possible object is {@link Double }
+				 * 
+				 */
+				public Double getValue() {
+					return value;
+				}
+
+				/**
+				 * Sets the value of the value property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link Double }
+				 * 
+				 */
+				public void setValue(Double value) {
+					this.value = value;
+				}
+
+				/**
+				 * Gets the value of the currency property.
+				 * 
+				 * @return possible object is {@link String }
+				 * 
+				 */
+				public String getCurrency() {
+					return currency;
+				}
+
+				/**
+				 * Sets the value of the currency property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link String }
+				 * 
+				 */
+				public void setCurrency(String value) {
+					this.currency = value;
+				}
+
+			}
+
+			/**
+			 * <p>
+			 * Java class for anonymous complex type.
+			 * 
+			 * <p>
+			 * The following schema fragment specifies the expected content
+			 * contained within this class.
+			 * 
+			 * <pre>
+			 * &lt;complexType>
+			 *   &lt;complexContent>
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+			 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *     &lt;/restriction>
+			 *   &lt;/complexContent>
+			 * &lt;/complexType>
+			 * </pre>
+			 * 
+			 * 
+			 */
+			@XmlAccessorType(XmlAccessType.FIELD)
+			@XmlType(name = "")
+			public static class ResourcesProvidedByTheHouse {
+
+				@XmlAttribute(name = "value")
+				protected Double value;
+				@XmlAttribute(name = "currency")
+				protected String currency;
+
+				/**
+				 * Gets the value of the value property.
+				 * 
+				 * @return possible object is {@link Double }
+				 * 
+				 */
+				public Double getValue() {
+					return value;
+				}
+
+				/**
+				 * Sets the value of the value property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link Double }
+				 * 
+				 */
+				public void setValue(Double value) {
+					this.value = value;
+				}
+
+				/**
+				 * Gets the value of the currency property.
+				 * 
+				 * @return possible object is {@link String }
+				 * 
+				 */
+				public String getCurrency() {
+					return currency;
+				}
+
+				/**
+				 * Sets the value of the currency property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link String }
+				 * 
+				 */
+				public void setCurrency(String value) {
+					this.currency = value;
+				}
+
+			}
+
+			/**
+			 * <p>
+			 * Java class for anonymous complex type.
+			 * 
+			 * <p>
+			 * The following schema fragment specifies the expected content
+			 * contained within this class.
+			 * 
+			 * <pre>
+			 * &lt;complexType>
+			 *   &lt;complexContent>
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+			 *       &lt;attribute name="currency" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *     &lt;/restriction>
+			 *   &lt;/complexContent>
+			 * &lt;/complexType>
+			 * </pre>
+			 * 
+			 * 
+			 */
+			@XmlAccessorType(XmlAccessType.FIELD)
+			@XmlType(name = "")
+			public static class Total {
+
+				@XmlAttribute(name = "value")
+				protected Double value;
+				@XmlAttribute(name = "currency")
+				protected String currency;
+
+				/**
+				 * Gets the value of the value property.
+				 * 
+				 * @return possible object is {@link Double }
+				 * 
+				 */
+				public Double getValue() {
+					return value;
+				}
+
+				/**
+				 * Sets the value of the value property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link Double }
+				 * 
+				 */
+				public void setValue(Double value) {
+					this.value = value;
+				}
+
+				/**
+				 * Gets the value of the currency property.
+				 * 
+				 * @return possible object is {@link String }
+				 * 
+				 */
+				public String getCurrency() {
+					return currency;
+				}
+
+				/**
+				 * Sets the value of the currency property.
+				 * 
+				 * @param value
+				 *            allowed object is {@link String }
+				 * 
+				 */
+				public void setCurrency(String value) {
+					this.currency = value;
+				}
+
+			}
+
+			/**
+			 * <p>
+			 * Java class for anonymous complex type.
+			 * 
+			 * <p>
+			 * The following schema fragment specifies the expected content
+			 * contained within this class.
+			 * 
+			 * <pre>
+			 * &lt;complexType>
+			 *   &lt;complexContent>
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *       &lt;sequence>
+			 *         &lt;element name="points" maxOccurs="unbounded">
+			 *           &lt;complexType>
+			 *             &lt;complexContent>
+			 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+			 *                 &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
+			 *                 &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+			 *               &lt;/restriction>
+			 *             &lt;/complexContent>
+			 *           &lt;/complexType>
+			 *         &lt;/element>
+			 *       &lt;/sequence>
+			 *     &lt;/restriction>
+			 *   &lt;/complexContent>
+			 * &lt;/complexType>
+			 * </pre>
+			 * 
+			 * 
+			 */
+			@XmlAccessorType(XmlAccessType.FIELD)
+			@XmlType(name = "", propOrder = { "points" })
+			public static class TravelPoints {
+
+				@XmlElement(required = true)
+				protected List<MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points> points;
+
+				/**
+				 * Gets the value of the points property.
+				 * 
+				 * <p>
+				 * This accessor method returns a reference to the live list,
+				 * not a snapshot. Therefore any modification you make to the
+				 * returned list will be present inside the JAXB object. This is
+				 * why there is not a <CODE>set</CODE> method for the points
+				 * property.
+				 * 
+				 * <p>
+				 * For example, to add a new item, do as follows:
+				 * 
+				 * <pre>
+				 * getPoints().add(newItem);
+				 * </pre>
+				 * 
+				 * 
+				 * <p>
+				 * Objects of the following type(s) are allowed in the list
+				 * {@link MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points }
+				 * 
+				 * 
+				 */
+				public List<MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points> getPoints() {
+					if (points == null) {
+						points = new ArrayList<MemberExpenditureReports.Report.ExpenditureTotals.TravelPoints.Points>();
+					}
+					return this.points;
+				}
+
+				/**
+				 * <p>
+				 * Java class for anonymous complex type.
+				 * 
+				 * <p>
+				 * The following schema fragment specifies the expected content
+				 * contained within this class.
+				 * 
+				 * <pre>
+				 * &lt;complexType>
+				 *   &lt;complexContent>
+				 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+				 *       &lt;attribute name="type" type="{http://www.w3.org/2001/XMLSchema}string" />
+				 *       &lt;attribute name="value" type="{http://www.w3.org/2001/XMLSchema}double" />
+				 *     &lt;/restriction>
+				 *   &lt;/complexContent>
+				 * &lt;/complexType>
+				 * </pre>
+				 * 
+				 * 
+				 */
+				@XmlAccessorType(XmlAccessType.FIELD)
+				@XmlType(name = "")
+				public static class Points {
+
+					@XmlAttribute(name = "type")
+					protected String type;
+					@XmlAttribute(name = "value")
+					protected Double value;
+
+					/**
+					 * Gets the value of the type property.
+					 * 
+					 * @return possible object is {@link String }
+					 * 
+					 */
+					public String getType() {
+						return type;
+					}
+
+					/**
+					 * Sets the value of the type property.
+					 * 
+					 * @param value
+					 *            allowed object is {@link String }
+					 * 
+					 */
+					public void setType(String value) {
+						this.type = value;
+					}
+
+					/**
+					 * Gets the value of the value property.
+					 * 
+					 * @return possible object is {@link Double }
+					 * 
+					 */
+					public Double getValue() {
+						return value;
+					}
+
+					/**
+					 * Sets the value of the value property.
+					 * 
+					 * @param value
+					 *            allowed object is {@link Double }
+					 * 
+					 */
+					public void setValue(Double value) {
+						this.value = value;
+					}
+
+				}
+
+			}
+
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content
+		 * contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;complexContent>
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *       &lt;attribute name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="status" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="party-en" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *       &lt;attribute name="party-fr" type="{http://www.w3.org/2001/XMLSchema}string" />
+		 *     &lt;/restriction>
+		 *   &lt;/complexContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "")
+		public static class Member {
+
+			@XmlAttribute(name = "lastName")
+			protected String lastName;
+			@XmlAttribute(name = "firstName")
+			protected String firstName;
+			@XmlAttribute(name = "status")
+			protected String status;
+			@XmlAttribute(name = "party-en")
+			protected String partyEn;
+			@XmlAttribute(name = "party-fr")
+			protected String partyFr;
+
+			/**
+			 * Gets the value of the lastName property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getLastName() {
+				return lastName;
+			}
+
+			/**
+			 * Sets the value of the lastName property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setLastName(String value) {
+				this.lastName = value;
+			}
+
+			/**
+			 * Gets the value of the firstName property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getFirstName() {
+				return firstName;
+			}
+
+			/**
+			 * Sets the value of the firstName property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setFirstName(String value) {
+				this.firstName = value;
+			}
+
+			/**
+			 * Gets the value of the status property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getStatus() {
+				return status;
+			}
+
+			/**
+			 * Sets the value of the status property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setStatus(String value) {
+				this.status = value;
+			}
+
+			/**
+			 * Gets the value of the partyEn property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getPartyEn() {
+				return partyEn;
+			}
+
+			/**
+			 * Sets the value of the partyEn property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setPartyEn(String value) {
+				this.partyEn = value;
+			}
+
+			/**
+			 * Gets the value of the partyFr property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getPartyFr() {
+				return partyFr;
+			}
+
+			/**
+			 * Sets the value of the partyFr property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setPartyFr(String value) {
+				this.partyFr = value;
+			}
+
+		}
+
+	}
 
 }

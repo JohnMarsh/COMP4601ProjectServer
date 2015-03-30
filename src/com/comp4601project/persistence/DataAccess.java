@@ -9,14 +9,17 @@ import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLStreamException;
 
 import com.comp4601project.fetcher.DataFetcher;
+import com.comp4601project.indexing.Indexer;
 import com.comp4601project.model.Bill;
 import com.comp4601project.model.Bills;
 import com.comp4601project.model.MemberExpenditureReports;
+import com.comp4601project.model.MemberExpenditureReports.Report;
 import com.comp4601project.model.MemberOfParliamentList;
 import com.comp4601project.model.MemberOfParliamentList.MemberOfParliament;
 import com.comp4601project.model.ModelObjectFactory;
 import com.comp4601project.model.Votes;
 import com.comp4601project.model.Votes.Vote;
+import com.comp4601project.searching.Searcher;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -63,6 +66,12 @@ public class DataAccess implements IDataAccess {
 		for (MemberOfParliament mp : mpList.getMemberOfParliament()) {
 			saveMP(mp);
 		}
+		try {
+			Indexer.getInstance().indexMPList(mpList);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -80,6 +89,8 @@ public class DataAccess implements IDataAccess {
 			} else {
 				db.getCollection(MP_COLLECTION).update(existingMp, updatedMp);
 			}
+
+		
 
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
@@ -187,15 +198,54 @@ public class DataAccess implements IDataAccess {
 	}
 
 	@Override
-	public void saveExpReport(MemberExpenditureReports report) {
-		// TODO Auto-generated method stub
+	public void saveExpReportList(MemberExpenditureReports reports) {
+		for (Report report : reports.getReport()) {
+			saveExpReport(report);
+		}
+	}
 
+	@Override
+	public void saveExpReport(Report report) {
+		try {
+			DBObject existingReport = getExpReportForMP(report.getMember()
+					.getFirstName(), report.getMember().getLastName());
+
+			DBObject updatedReport = (DBObject) JSON.parse(ModelObjectFactory
+					.toJSON(report));
+
+			if (existingReport == null) {
+
+				db.getCollection(EXP_COLLECTION).insert(updatedReport);
+			} else {
+				db.getCollection(EXP_COLLECTION).update(existingReport,
+						updatedReport);
+			}
+
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public String getExpReportJSONForMP(String fname, String lname) {
-		// TODO Auto-generated method stub
-		return null;
+		DBObject exp = getExpReportForMP(fname, lname);
+		return JSON.serialize(exp);
+	}
+
+	@Override
+	public DBObject getExpReportForMP(String fname, String lname) {
+		DBObject query = (DBObject) JSON.parse("{'member' : {"
+				+ "	'firstName' :\"" + fname + "\"," + "		'lastName' : \""
+				+ lname + "\"}}");
+
+		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(query);
+
+		if (cursor.size() == 0) {
+			return null;
+		} else {
+			return cursor.next();
+		}
 	}
 
 	@Override
@@ -229,15 +279,17 @@ public class DataAccess implements IDataAccess {
 						updatedBill);
 			}
 
+	
+
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 	}
 
 	@Override
 	public DBObject getBillWithId(Integer id) {
-		BasicDBObject query = new BasicDBObject("_id", id);
+		BasicDBObject query = new BasicDBObject("id", id);
 
 		DBCursor cursor = db.getCollection(BILL_COLLECTION).find(query);
 
@@ -258,6 +310,13 @@ public class DataAccess implements IDataAccess {
 		while (cursorDoc.hasNext()) {
 			System.out.println(cursorDoc.next());
 		}
+		
+		try {
+			Indexer.getInstance().indexBillList(bills);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		System.out.println(cursorDoc.size());
 	}
@@ -270,5 +329,76 @@ public class DataAccess implements IDataAccess {
 			mps.add(cursorDoc.next());
 		}
 		return mps;
+	}
+
+	@Override
+	public String getBillJSON(Integer id) {
+		DBObject bill = getBillWithId(id);
+		return JSON.serialize(bill);
+	}
+
+	@Override
+	public String getBillListJSON(Integer parliament, Integer session) {
+		List<DBObject> bills = new ArrayList<DBObject>();
+		DBObject query = (DBObject) JSON.parse("{'parliamentSession' : {"
+				+ "		'parliamentNumber' : " + parliament + ","
+				+ "		'sessionNumber' : " + session + "}}");
+
+		DBCursor cursor = db.getCollection(BILL_COLLECTION).find(query);
+
+		if (cursor.size() == 0) {
+			try {
+				DataFetcher.fetchBills(parliament, session);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JAXBException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (XMLStreamException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			db.getCollection(BILL_COLLECTION).find(query);
+			if (cursor.size() == 0) {
+				return "No Bills found";
+			}
+		}
+
+		while (cursor.hasNext()) {
+			bills.add(cursor.next());
+		}
+		return JSON.serialize(bills);
+	}
+
+	public String getBillListJSON(Integer parliament) {
+		// TODO Auto-generated method stub
+		return "Not implemented yet";
+	}
+
+	@Override
+	public String searchMPandGetJSON(String query) {
+		List<String> mpNames = Searcher.queryMp(query);
+		List<DBObject> mpList = new ArrayList<DBObject>();
+		for (String name : mpNames) {
+			String[] names = name.split("-");
+			mpList.add(getMP(names[0], names[1]));
+		}
+		return JSON.serialize(mpList);
+	}
+
+	@Override
+	public String searchBillandGetJSON(String query) {
+		List<Integer> billIds = Searcher.queryBill(query);
+		List<DBObject> billList = new ArrayList<DBObject>();
+		for (Integer id : billIds) {
+			billList.add(getBillWithId(id));
+		}
+		return JSON.serialize(billList);
+	}
+
+	public static void main(String args[]) {
+		System.out
+				.println(DataAccess.getInstance().searchMPandGetJSON("david"));
 	}
 }

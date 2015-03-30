@@ -30,6 +30,7 @@ public class ModelObjectFactory {
 		marshaller.setProperty(MarshallerProperties.MEDIA_TYPE,
 				"application/json");
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		marshaller.setProperty(MarshallerProperties.JSON_INCLUDE_ROOT, false);
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		marshaller.marshal(o, os);
 		String json = new String(os.toByteArray());

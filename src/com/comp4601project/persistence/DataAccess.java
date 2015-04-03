@@ -177,9 +177,6 @@ public class DataAccess implements IDataAccess {
 				e.printStackTrace();
 			}
 			db.getCollection(VOTE_COLLECTION).find(query);
-			if (cursor.size() == 0) {
-				return "No votes found";
-			}
 		}
 
 		while (cursor.hasNext()) {
@@ -233,11 +230,11 @@ public class DataAccess implements IDataAccess {
 
 	@Override
 	public DBObject getExpReportForMP(String fname, String lname) {
-		DBObject query = (DBObject) JSON.parse("{'member' : {"
-				+ "	'firstName' :\"" + fname + "\"," + "		'lastName' : \""
-				+ lname + "\"}}");
+		BasicDBObject mp =  new BasicDBObject("firstName", fname); 
+		mp.put("lastName", lname);
+		BasicDBObject report =  new BasicDBObject("member", mp); 
 
-		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(query);
+		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(report);
 
 		if (cursor.size() == 0) {
 			return null;
@@ -356,9 +353,6 @@ public class DataAccess implements IDataAccess {
 				e.printStackTrace();
 			}
 			db.getCollection(BILL_COLLECTION).find(query);
-			if (cursor.size() == 0) {
-				return "No Bills found";
-			}
 		}
 
 		while (cursor.hasNext()) {
@@ -406,10 +400,6 @@ public class DataAccess implements IDataAccess {
 		cursor.sort(new BasicDBObject("lastUpdated", -1));
 		
 		cursor.limit(limit);
-
-		if (cursor.size() == 0) {
-			return "No Bills found";
-		}
 
 		while (cursor.hasNext()) {
 			bills.add(cursor.next());

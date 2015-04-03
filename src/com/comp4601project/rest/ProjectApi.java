@@ -12,6 +12,7 @@ import com.comp4601project.persistence.DataAccess;
 public class ProjectApi {
 
 	@GET
+	@Produces("application/json")
 	@Path("/mp/{name}")
 	public String getMp(@PathParam("name") String name) {
 		if (name == null || !name.contains("-") || name.isEmpty()) {
@@ -22,12 +23,14 @@ public class ProjectApi {
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/mps")
 	public String getMpList() {
 		return DataAccess.getInstance().getMPListJSON();
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/votes/{parliament}/{session}")
 	public String getVoteList(@PathParam("parliament") String parliament,
 			@PathParam("session") String session) {
@@ -35,6 +38,7 @@ public class ProjectApi {
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/vote/{parliament}/{session}/{number}")
 	public String getVote(@PathParam("parliament") String parliament,
 			@PathParam("session") String session,
@@ -44,12 +48,14 @@ public class ProjectApi {
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/bill/{id}")
 	public String getBill(@PathParam("id") String id) {
 		return DataAccess.getInstance().getBillJSON(Integer.parseInt(id));
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/bills/{parliament}/{session}")
 	public String getBills(@PathParam("parliament") String parliament,
 			@PathParam("session") String session) {
@@ -58,6 +64,7 @@ public class ProjectApi {
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/bills/{parliament}")
 	public String getBills(@PathParam("parliament") String parliament) {
 		return DataAccess.getInstance().getBillListJSON(
@@ -65,30 +72,35 @@ public class ProjectApi {
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/bills/today")
 	public String getTodaysBills() {
 		return null;
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/bill/search/{query}")
 	public String billSearch(@PathParam("query") String query) {
 		return null;
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/mp/search/{query}")
 	public String mpSearch(@PathParam("query") String query) {
 		return DataAccess.getInstance().searchMPandGetJSON(query);
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/expenses/top/")
 	public String getTopExpenses() {
 		return null;
 	}
 
 	@GET
+	@Produces("application/json")
 	@Path("/expenses/{name}/")
 	public String getExpensesForMP(@PathParam("name") String name) {
 		if (name == null || !name.contains("-") || name.isEmpty()) {

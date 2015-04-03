@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Fri Apr 03 2015 15:31:55 
+		GMT-0400 (EDT) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="Results">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Publications">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Publication" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PublicationItems">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PublicationItem" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Person">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="FirstName" type="xs:string"></xs:element>
+																			<xs:element name="LastName" type="xs:string"></xs:element>
+																			<xs:element name="Honorific"></xs:element>
+																			<xs:element name="URLFullName" type="xs:string"></xs:element>
+																			<xs:element name="Constituency" type="xs:string"></xs:element>
+																			<xs:element name="Caucus" type="xs:string">
+																				<xs:complexType>
+																					<xs:attribute name="Abbr" type="xs:string"></xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Province" type="xs:string">
+																				<xs:complexType>
+																					<xs:attribute name="Code" type="xs:string"></xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Image" type="xs:string"></xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="Id" type="xs:int"></xs:attribute>
+																		<xs:attribute name="IsMember" type="xs:int"></xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="OrderOfBusiness" type="xs:string"></xs:element>
+																<xs:element name="SubjectOfBusiness" type="xs:string"></xs:element>
+																<xs:element name="XmlContent">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Intervention">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="PersonSpeaking">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Affiliation" type="xs:string">
+																										<xs:complexType>
+																											<xs:attribute name="DbId" type="xs:int"></xs:attribute>
+																											<xs:attribute name="Type" type="xs:int"></xs:attribute>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="Content">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Timestamp" type="xs:string">
+																										<xs:complexType>
+																											<xs:attribute name="Hr" type="xs:int"></xs:attribute>
+																											<xs:attribute name="Mn" type="xs:int"></xs:attribute>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element name="FloorLanguage"
+																										type="xs:string">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="I" type="xs:string"></xs:element>
+																											</xs:sequence>
+																											<xs:attribute name="language"
+																												type="xs:string"></xs:attribute>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element name="ParaText" type="xs:string">
+																										<xs:complexType>
+																											<xs:attribute name="id" type="xs:int"></xs:attribute>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="Type" type="xs:string"></xs:attribute>
+																					<xs:attribute name="ToC" type="xs:string"></xs:attribute>
+																					<xs:attribute name="ToCText" type="xs:string"></xs:attribute>
+																					<xs:attribute name="id" type="xs:int"></xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="Id" type="xs:int"></xs:attribute>
+															<xs:attribute name="EventId" type="xs:int"></xs:attribute>
+															<xs:attribute name="VideoURL" type="xs:string"></xs:attribute>
+															<xs:attribute name="Sequence" type="xs:int"></xs:attribute>
+															<xs:attribute name="Page" type="xs:int"></xs:attribute>
+															<xs:attribute name="PdfPage" type="xs:int"></xs:attribute>
+															<xs:attribute name="TypeId" type="xs:int"></xs:attribute>
+															<xs:attribute name="Date" type="xs:date"></xs:attribute>
+															<xs:attribute name="Hour" type="xs:int"></xs:attribute>
+															<xs:attribute name="Minute" type="xs:int"></xs:attribute>
+															<xs:attribute name="Second" type="xs:int"></xs:attribute>
+															<xs:attribute name="FacebookLink" type="xs:string"></xs:attribute>
+															<xs:attribute name="TwitterLink" type="xs:string"></xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Id" type="xs:int"></xs:attribute>
+									<xs:attribute name="Title" type="xs:string"></xs:attribute>
+									<xs:attribute name="Date" type="xs:date"></xs:attribute>
+									<xs:attribute name="Time" type="xs:string"></xs:attribute>
+									<xs:attribute name="Parliament" type="xs:int"></xs:attribute>
+									<xs:attribute name="Session" type="xs:int"></xs:attribute>
+									<xs:attribute name="Organization" type="xs:string"></xs:attribute>
+									<xs:attribute name="PdfURL" type="xs:string"></xs:attribute>
+									<xs:attribute name="HtmlURL" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Refiners">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Refiner" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Value"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="Code" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="RecordsFound" type="xs:int"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

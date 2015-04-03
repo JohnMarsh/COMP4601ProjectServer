@@ -230,11 +230,11 @@ public class DataAccess implements IDataAccess {
 
 	@Override
 	public DBObject getExpReportForMP(String fname, String lname) {
-		DBObject query = (DBObject) JSON.parse("{'member' : {"
-				+ "	'firstName' :\"" + fname + "\"," + "		'lastName' : \""
-				+ lname + "\"}}");
+		BasicDBObject mp =  new BasicDBObject("firstName", fname); 
+		mp.put("lastName", lname);
+		BasicDBObject report =  new BasicDBObject("member", mp); 
 
-		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(query);
+		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(report);
 
 		if (cursor.size() == 0) {
 			return null;

@@ -32,8 +32,8 @@ public class DataFetcher {
 
 	public static void main(String args[]) throws IOException, JAXBException,
 			XMLStreamException {
-		fetchMPs();
-		// fetchBills(41,2);
+		//fetchMPs();
+		 fetchBills(41,2);
 		//fetchExpenseReports();
 	}
 

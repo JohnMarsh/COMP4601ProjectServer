@@ -2928,7 +2928,7 @@ public class Bill {
 			@XmlElement(required = true)
 			protected String firstName;
 			@XmlElement(required = true)
-			protected Object middleName;
+			protected String middleName;
 			@XmlElement(required = true)
 			protected String lastName;
 			@XmlAttribute(name = "id")
@@ -2984,7 +2984,7 @@ public class Bill {
 			 * @return possible object is {@link Object }
 			 * 
 			 */
-			public Object getMiddleName() {
+			public String getMiddleName() {
 				return middleName;
 			}
 
@@ -2992,10 +2992,10 @@ public class Bill {
 			 * Sets the value of the middleName property.
 			 * 
 			 * @param value
-			 *            allowed object is {@link Object }
+			 *            allowed olbject is {@link Object }
 			 * 
 			 */
-			public void setMiddleName(Object value) {
+			public void setMiddleName(String value) {
 				this.middleName = value;
 			}
 

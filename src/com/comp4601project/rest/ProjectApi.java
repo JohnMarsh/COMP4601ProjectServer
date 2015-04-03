@@ -73,9 +73,9 @@ public class ProjectApi {
 
 	@GET
 	@Produces("application/json")
-	@Path("/bills/today")
-	public String getTodaysBills() {
-		return null;
+	@Path("/bills/recent/{limit}")
+	public String getTodaysBills(@PathParam("limit") Integer limit) {
+		return DataAccess.getInstance().getRecentBills(limit);
 	}
 
 	@GET

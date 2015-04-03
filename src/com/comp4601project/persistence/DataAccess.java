@@ -90,8 +90,6 @@ public class DataAccess implements IDataAccess {
 				db.getCollection(MP_COLLECTION).update(existingMp, updatedMp);
 			}
 
-		
-
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -279,12 +277,10 @@ public class DataAccess implements IDataAccess {
 						updatedBill);
 			}
 
-	
-
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
 	}
 
 	@Override
@@ -310,7 +306,7 @@ public class DataAccess implements IDataAccess {
 		while (cursorDoc.hasNext()) {
 			System.out.println(cursorDoc.next());
 		}
-		
+
 		try {
 			Indexer.getInstance().indexBillList(bills);
 		} catch (IOException e) {
@@ -400,5 +396,24 @@ public class DataAccess implements IDataAccess {
 	public static void main(String args[]) {
 		System.out
 				.println(DataAccess.getInstance().searchMPandGetJSON("david"));
+	}
+
+	public String getRecentBills(Integer limit) {
+		List<DBObject> bills = new ArrayList<DBObject>();
+
+		DBCursor cursor = db.getCollection(BILL_COLLECTION).find();
+
+		cursor.sort(new BasicDBObject("lastUpdated", -1));
+		
+		cursor.limit(limit);
+
+		if (cursor.size() == 0) {
+			return "No Bills found";
+		}
+
+		while (cursor.hasNext()) {
+			bills.add(cursor.next());
+		}
+		return JSON.serialize(bills);
 	}
 }

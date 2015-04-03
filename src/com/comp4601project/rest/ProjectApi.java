@@ -82,7 +82,7 @@ public class ProjectApi {
 	@Produces("application/json")
 	@Path("/bill/search/{query}")
 	public String billSearch(@PathParam("query") String query) {
-		return null;
+		return DataAccess.getInstance().searchBillandGetJSON(query);
 	}
 
 	@GET

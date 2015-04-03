@@ -37,6 +37,7 @@ public class Searcher {
 	}
 
 	public static ArrayList<String> queryMp(String searchString) {
+		searchString = searchString.replaceAll(":", " ");
 		try {
 			IndexReader reader = DirectoryReader.open(FSDirectory
 					.open(new File(Indexer.INDEX_MP_DIR)));
@@ -66,6 +67,7 @@ public class Searcher {
 	}
 
 	public static ArrayList<Integer> queryBill(String searchString) {
+		searchString = searchString.replaceAll(":", " ");
 		try {
 			IndexReader reader = DirectoryReader.open(FSDirectory
 					.open(new File(Indexer.INDEX_BILL_DIR)));

@@ -177,9 +177,6 @@ public class DataAccess implements IDataAccess {
 				e.printStackTrace();
 			}
 			db.getCollection(VOTE_COLLECTION).find(query);
-			if (cursor.size() == 0) {
-				return "No votes found";
-			}
 		}
 
 		while (cursor.hasNext()) {
@@ -356,9 +353,6 @@ public class DataAccess implements IDataAccess {
 				e.printStackTrace();
 			}
 			db.getCollection(BILL_COLLECTION).find(query);
-			if (cursor.size() == 0) {
-				return "No Bills found";
-			}
 		}
 
 		while (cursor.hasNext()) {
@@ -406,10 +400,6 @@ public class DataAccess implements IDataAccess {
 		cursor.sort(new BasicDBObject("lastUpdated", -1));
 		
 		cursor.limit(limit);
-
-		if (cursor.size() == 0) {
-			return "No Bills found";
-		}
 
 		while (cursor.hasNext()) {
 			bills.add(cursor.next());

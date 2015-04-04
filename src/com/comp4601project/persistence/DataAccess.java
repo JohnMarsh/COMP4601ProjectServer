@@ -230,11 +230,11 @@ public class DataAccess implements IDataAccess {
 
 	@Override
 	public DBObject getExpReportForMP(String fname, String lname) {
-		BasicDBObject mp =  new BasicDBObject("firstName", fname); 
-		mp.put("lastName", lname);
-		BasicDBObject report =  new BasicDBObject("member", mp); 
+		BasicDBObject mp = new BasicDBObject("member.firstName", fname);
+		mp.put("member.lastName", lname);
+		
 
-		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(report);
+		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(mp);
 
 		if (cursor.size() == 0) {
 			return null;
@@ -333,9 +333,9 @@ public class DataAccess implements IDataAccess {
 	@Override
 	public String getBillListJSON(Integer parliament, Integer session) {
 		List<DBObject> bills = new ArrayList<DBObject>();
-		DBObject query = (DBObject) JSON.parse("{'parliamentSession' : {"
-				+ "		'parliamentNumber' : " + parliament + ","
-				+ "		'sessionNumber' : " + session + "}}");
+		BasicDBObject query = new BasicDBObject(
+				"parliamentSession.parliamentNumber", parliament);
+		query.put("parliamentSession.sessionNumber", session);
 
 		DBCursor cursor = db.getCollection(BILL_COLLECTION).find(query);
 
@@ -398,7 +398,7 @@ public class DataAccess implements IDataAccess {
 		DBCursor cursor = db.getCollection(BILL_COLLECTION).find();
 
 		cursor.sort(new BasicDBObject("lastUpdated", -1));
-		
+
 		cursor.limit(limit);
 
 		while (cursor.hasNext()) {

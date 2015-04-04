@@ -1763,7 +1763,7 @@ public class Bill {
 				@XmlElement(required = true)
 				protected Bill.Events.LastMajorStageEvent.Event.Status status;
 				@XmlElement(required = true)
-				protected Object description;
+				protected String description;
 				@XmlAttribute(name = "id")
 				protected Integer id;
 				@XmlAttribute(name = "chamber")
@@ -1804,7 +1804,7 @@ public class Bill {
 				 * @return possible object is {@link Object }
 				 * 
 				 */
-				public Object getDescription() {
+				public String getDescription() {
 					return description;
 				}
 
@@ -1815,7 +1815,7 @@ public class Bill {
 				 *            allowed object is {@link Object }
 				 * 
 				 */
-				public void setDescription(Object value) {
+				public void setDescription(String value) {
 					this.description = value;
 				}
 

@@ -32,9 +32,9 @@ public class DataFetcher {
 
 	public static void main(String args[]) throws IOException, JAXBException,
 			XMLStreamException {
-		//fetchMPs();
-		 fetchBills(41,2);
-		//fetchExpenseReports();
+		fetchMPs();
+		fetchBills(41,2);
+		fetchExpenseReports();
 	}
 
 	static String convertStreamToString(java.io.InputStream is) {

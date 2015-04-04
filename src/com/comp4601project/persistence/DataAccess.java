@@ -232,7 +232,6 @@ public class DataAccess implements IDataAccess {
 	public DBObject getExpReportForMP(String fname, String lname) {
 		BasicDBObject mp = new BasicDBObject("member.firstName", fname);
 		mp.put("member.lastName", lname);
-		
 
 		DBCursor cursor = db.getCollection(EXP_COLLECTION).find(mp);
 
@@ -405,5 +404,20 @@ public class DataAccess implements IDataAccess {
 			bills.add(cursor.next());
 		}
 		return JSON.serialize(bills);
+	}
+
+	public String getTopExpenses(Integer limit) {
+		List<DBObject> reports = new ArrayList<DBObject>();
+
+		DBCursor cursor = db.getCollection(EXP_COLLECTION).find();
+
+		cursor.sort(new BasicDBObject("expenditureTotals.total.value", -1));
+
+		cursor.limit(limit);
+
+		while (cursor.hasNext()) {
+			reports.add(cursor.next());
+		}
+		return JSON.serialize(reports);
 	}
 }

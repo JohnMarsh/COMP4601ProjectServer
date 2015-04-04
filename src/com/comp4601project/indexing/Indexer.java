@@ -46,6 +46,78 @@ public class Indexer {
 		}
 		return instance;
 	}
+	
+	public static void main(String[] args){
+		Indexer.getInstance().deleteBillIndex();
+	}
+	
+	public void deleteMPIndex() {
+		FSDirectory mpdir = null;
+		try {
+			mpdir = FSDirectory.open(new File(INDEX_MP_DIR));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Analyzer analyzer = new StandardAnalyzer();
+		IndexWriterConfig mpwc = new IndexWriterConfig(Version.LUCENE_4_10_3,
+				analyzer);
+		try {
+			mpWriter = new IndexWriter(mpdir, mpwc);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			mpWriter.deleteAll();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			mpWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteBillIndex(){
+		FSDirectory billdir = null;
+		try {
+
+			billdir = FSDirectory.open(new File(INDEX_BILL_DIR));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Analyzer analyzer = new StandardAnalyzer();
+		IndexWriterConfig billwc = new IndexWriterConfig(Version.LUCENE_4_10_3,
+				analyzer);
+		billWriter = null;
+		try {
+			billWriter = new IndexWriter(billdir, billwc);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			billWriter.deleteAll();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			billWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void indexBillList(Bills bills) throws IOException {
 		FSDirectory billdir = null;

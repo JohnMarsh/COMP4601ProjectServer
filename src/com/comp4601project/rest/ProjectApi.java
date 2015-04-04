@@ -94,9 +94,9 @@ public class ProjectApi {
 
 	@GET
 	@Produces("application/json")
-	@Path("/expenses/top/")
-	public String getTopExpenses() {
-		return null;
+	@Path("/expenses/top/{limit}")
+	public String getTopExpenses(@PathParam("limit") Integer limit) {
+		return DataAccess.getInstance().getTopExpenses(limit);
 	}
 
 	@GET
